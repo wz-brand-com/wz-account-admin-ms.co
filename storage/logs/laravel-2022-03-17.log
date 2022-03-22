@@ -1,0 +1,21 @@
+[2022-03-17 10:30:43] local.INFO: $input[org_name]: amit-kumars-rs  
+[2022-03-17 10:30:43] local.INFO: Calling OrganisationApiController::getOrganisationAccessToken()  
+[2022-03-17 10:30:43] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-17 10:30:43] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-17 10:30:43] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-17 10:30:43] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-17 10:30:43] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-17 10:30:43] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-17 10:30:43] local.INFO: Getting the token!  
+[2022-03-17 10:30:44] local.INFO: response aa gya  
+[2022-03-17 10:30:44] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRjYzgxZGVhMzA5YjM4OWMyODYwOTY5ZmE2ZTZjN2E2ZjYxYTBmMzkyNWI0YTUzMmIxYmJlNTFjYTE5YWMxZTRkMzgyMTRhNWJhMzFiNzI2In0.eyJhdWQiOiI1IiwianRpIjoiZGNjODFkZWEzMDliMzg5YzI4NjA5NjlmYTZlNmM3YTZmNjFhMGYzOTI1YjRhNTMyYjFiYmU1MWNhMTlhYzFlNGQzODIxNGE1YmEzMWI3MjYiLCJpYXQiOjE2NDc1MTMwNDQsIm5iZiI6MTY0NzUxMzA0NCwiZXhwIjoxNjc5MDQ5MDQ0LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.n9jioJSocrIknAn8r6zTIy61uWzPouXgh1O5e5hNeX6z1s8xCqNYW1vct_MdQhppM3gV9xd9vublxcsQjQxf33-ihU6QgjQ3jSwpjTcfwUqGOQ_dVShNsAh3oi1eyehkGoz0AX61EKeLpb6FOzELnIN1_X6RoiWoho8O9bG93C-s11xj7U7kITXOloMr8hmqhWo6C2zoAcbxDouzimXyyvalw7uZAJ07jpZFjInjUUzvU91-UfE7bF1k0J8s2cV2-dzqKezR1v1aRjGl9xtqhDUN60PC9397knNmgQwRU_2_68K0ubynsgMnkiaMvN076AbszL8KCRXL7oYnSIjwJp3VT5gmMWRhbp3fETyzMSOYHNtdB4gPBdBXJZDaAnPcp5VVrVsAMfsbNVc1J_kzGkUt5h2WL0GcblokJdqfVUE4nB3YsFbCRxlKW2JUzzSIlTUdrJvJpv3lU-PrbIHjvWK7zfeXUTC8On1_ugngIhVz0gKEQ5yr4R-jpMgUHAWjv7TByHUfa9P8ZI0feynuUoYLP5npq0xvkJiAuapH6aegjNrEo9glO1vvfw-3vPm_-DGlClNz65Ewiux-fOTlF2TqUX71jcYuHW0cUwTVmZQKGy0t4o8oDx0-1U7sgmgRxXlMBFt5YgP4qNbxCNz-VkfiMLmJm2tLQq6vS9YsYHs  
+[2022-03-17 10:30:44] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now creating task!  
+[2022-03-17 10:30:44] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL . SD_ORGANISATION_TYPE_MS_UPDATE: http://wz-organisation-ms/api/v1/j/organization_types/store  
+[2022-03-17 10:30:44] local.INFO: There was some exception in OrganisationApiController->update()  
+[2022-03-17 10:30:44] local.INFO: update nahi ho rha hai  
+[2022-03-17 10:30:44] local.INFO: Server error: `POST http://wz-organisation-ms/api/v1/j/organization_types/update` resulted in a `500 Internal Server Error` response:
+{
+    "message": "Trying to get property 'org_name' of non-object",
+    "exception": "ErrorException",
+    "file": "C:\\ (truncated...)
+  

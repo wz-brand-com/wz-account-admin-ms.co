@@ -1,0 +1,350 @@
+[2022-03-16 12:35:09] local.INFO: delete button me id me kya aa rha hai14  
+[2022-03-16 12:35:09] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:35:09] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:35:09] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:35:09] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:35:09] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:35:09] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:35:09] local.INFO: Getting the token!  
+[2022-03-16 12:35:10] local.INFO: response aa gya  
+[2022-03-16 12:35:10] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM1MTU4MjU3YjE3M2QyNzUxM2ViZDVkNDM4MmNiYmIzNDhiNjc5MGY0NTIwNzk0YTIwOTJlMTY2MjhkZmNmMDZiOWE0N2ZlNDBlY2VkMWZiIn0.eyJhdWQiOiI1IiwianRpIjoiYzUxNTgyNTdiMTczZDI3NTEzZWJkNWQ0MzgyY2JiYjM0OGI2NzkwZjQ1MjA3OTRhMjA5MmUxNjYyOGRmY2YwNmI5YTQ3ZmU0MGVjZWQxZmIiLCJpYXQiOjE2NDc0MzQxMTAsIm5iZiI6MTY0NzQzNDExMCwiZXhwIjoxNjc4OTcwMTEwLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.FhE3JLkp26KE3rYGUgPt0lEyOE5tU_irXNlBhlDXvmK7PKZcwE3Juy5ya0NsVw_bGKZtcRMcwsmf5fKPz4fy6F_sS38xFOcjAuxaN3EuyxWI9uHnjB6cejKWFt6dHGHkjgJfBV98mw2j-437jqhatknhddZ3VObHuLNleHhvjcTk0xC4dUvGoCISz88k1iD2Db_bPQDboqAIdiquGBD8Gp4pnd7AYE6bB8gS1gnzcb_nKi8kT3LXfd-ZVfAqDQWTuB4Kcm-Qela2wCZrVCqUV4sGPhjCg8MEibGGf0mKX7wl3OV0qdhv8PVynE0JuPo9QCrHXJUYTfKRxVvABjfHQ-OrVQOkz1CEnpK5fMAZdA0X8dUQUZZtZmlpVe3w99UQxH2-FvDSbPcIj52Gs-PXoUMf87Keyd9Wt8U43B0kqTUrn9muDihAZmi-tZMs3hblOPqq41q2qomqbwWeirEXpoUxh-knXVmsQnlEA9ZaXuZ_Mkni0cxMTZLK7O2nvuqboEm0lmN9eB5pyo4Tsy-UyWQyQ4eZAyW65yivnDn2ncg0p0la73ZGkO3MRz6pDt7DMqqfo8lSHtaNGfT1cKQxq5W2YeudK3v3q2cWgw5zouj0RbHvrMLioyj6_xgDDvCKaF3vvm6B8W4NS4IJB8se7xOd2LYAYOjM06ZTE65ZwGk  
+[2022-03-16 12:35:10] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching categories!  
+[2022-03-16 12:35:10] local.INFO: Org types Delete Url: http://wz-organisation-ms/api/v1/j/organization_types/destroy/14  
+[2022-03-16 12:35:10] local.INFO: Got the response from data! delete ho gaya successfully..  
+[2022-03-16 12:35:13] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:35:13] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:35:13] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:35:13] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:35:13] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:35:13] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:35:13] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:35:13] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:35:13] local.INFO: Getting the token!  
+[2022-03-16 12:35:13] local.INFO: response aa gya  
+[2022-03-16 12:35:13] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI5ZjM4MmViMzg1OTY3YjVjYjMwZDI5NGFjODYzODEyNmM3ZmVkYmJiMGFkYWU3MDNmZmIxYzA4MWExODZiMTg2OTE1NmEwMjdhMTI0YjViIn0.eyJhdWQiOiI1IiwianRpIjoiMjlmMzgyZWIzODU5NjdiNWNiMzBkMjk0YWM4NjM4MTI2YzdmZWRiYmIwYWRhZTcwM2ZmYjFjMDgxYTE4NmIxODY5MTU2YTAyN2ExMjRiNWIiLCJpYXQiOjE2NDc0MzQxMTMsIm5iZiI6MTY0NzQzNDExMywiZXhwIjoxNjc4OTcwMTEzLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.mNF3lxkW6suWaQqV5N9qQ_xlX-hGabI-91cprFEbwmNLYnLpAkvL-rdEicRf9UhnYWIzkSX00YR8Jx54Kdpw7yMiRC1dvXTS7XikGW2FM4jr-hKfr_tKP9-svHg1Oe6PG0p2_FLU36JBZj1xIbpktrnYqGiEtDQ-tZCLX1c65hhRHWM9QlyzeqB_p-mcb9X1sK3y4_DXTaI7rLP7MDU7_bu4uHVNIeySzCVo-HDqBHa_HscWMcV0RT65UsOzXQlHiGuY_klOkQq58t7pT8Wzl2nNfz0QQAg6vNIGzyoboFHXf0tH-FvlxvFWIvm6ilxevL8YgremykskfYBSuKi2EjshOpwMLlIMAzxcPxL95KpSwmWqM2S3zNrX-XbK9Rqum3sZJ6aE5CgHBZyMHGoVoD1ZZEK2iOqjb1Az2-03CQ1_FXN3HQcWW94b0jEsedKMBb20dTdMHsywbVJ4CvBv3PYgIR8DHg_cFyaZYbxT7vGZzmXTxAZKnaC1GbEvaV3_7B_iyVnwrUGQ1HGJGxySzh81RMUXGoDT7Lauzz9JluNP2YYbTYcx6xfDqEi6kQiLWURmZ1AzUvLqv-86cxvlbYkK4GOBmv9Gwm1OPovG44eGnRcL59JatTSRprUPW_EVYFtsiarxQmWv9TQ6JNzkCYRcLSIuSBgymC5CPcW93nE  
+[2022-03-16 12:35:13] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:35:13] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:35:13] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:35:13] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:35:13] local.INFO: Number of objects in response: 0  
+[2022-03-16 12:45:08] local.INFO: In OrganisationApiController->storeOrganisation()Array
+(
+    [_token] => Au3LAP1rYk2GEKkMmEYJQ6ZFbTEFX8lfJHBEtLa5
+    [org_name] => amit
+    [org_user_id] => 14
+    [org_user_email] => ami@gmail.com
+    [action] => Add
+    [hidden_id] => 
+)
+  
+[2022-03-16 12:45:08] local.INFO: Validating given Org types data...  
+[2022-03-16 12:45:08] local.INFO: Calling OrganisationApiController::getOrganisationAccessToken()  
+[2022-03-16 12:45:08] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:45:08] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:45:08] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:45:08] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:45:08] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:45:08] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:45:08] local.INFO: Getting the token!  
+[2022-03-16 12:45:09] local.INFO: response aa gya  
+[2022-03-16 12:45:09] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc4MDFmODhiYzc5MTJkY2I0NGJjYTg2MzU1NTg4ZWU3NzQwMTJlYjljYzUyOTQyYTg3NGRlMmYwMTZkYzMwZjhhNTljNTdlMDYzMDhiNzYzIn0.eyJhdWQiOiI1IiwianRpIjoiNzgwMWY4OGJjNzkxMmRjYjQ0YmNhODYzNTU1ODhlZTc3NDAxMmViOWNjNTI5NDJhODc0ZGUyZjAxNmRjMzBmOGE1OWM1N2UwNjMwOGI3NjMiLCJpYXQiOjE2NDc0MzQ3MDksIm5iZiI6MTY0NzQzNDcwOSwiZXhwIjoxNjc4OTcwNzA5LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.K2VWvx-4Tj6okYnz_Zx1P4Q06Uy91MQW4Cxq5TW6rgjJ8mDCuiCa3dIAuvmo4-0KiaEysD4lqxexCGavhoSmy_CDa2uWKRkHFknE9a00-LbVQ2CL8q-0Fj254HKpXPcjdrpkNkxTI4WINpX9PJ9XKAsQ1Vx1qDEUAOQ03H9SYol_Q5qtmfx7JQA4CJmZ4Xo-CBI2WzcFYQvPaOBhzfNfx6G9HZEPVbgOO_vPiTCUP_v17miZgg15Flxr7i33n2y0Ccn7srEmKIyhk9sxzSSDW0TMrDWN6SmKIgm2x89uPsqhcxttjmxb0I44cZw6Bzw0JY1_ERKd3OzEs1EeF-e1VNLPg44-BEXgulq3_ktZ419A3eUA6Ko2Do1OxHNfjUQhrNP3E9w0GslWgE2zJpfKvgFZJ6WiQQvJHtyG2Z8DNXxByP50aN9zjLbIM_Xf4bRqKxtMfEYjF8C_pm28gTXTvplpuEguvrmOSlFTg9NwxUBYPthEzXgwV4mHf1td8-wTtZSqxXtZNpqZMnHNVf1s8NkToL5w_-MOWwRXTYpdAqcjxd5jSI0fv3rw1TL5mdRGDZjrww2h0Qj8XHistaRdXrsBp2-qyQV4zj1Dk379urveyoza9H47SXhpLBjHsZ3ueztUfMWw3tb-QjGI_PFaw86g6QzOIw_c87Yk6n_pQrE  
+[2022-03-16 12:45:09] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now creating Task!  
+[2022-03-16 12:45:09] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL . SD_ORGANISATION_TYPE_MS_STORE_URL: http://wz-organisation-ms/api/v1/j/organization_types/store  
+[2022-03-16 12:45:09] local.INFO: Got the response from create Org types   
+[2022-03-16 12:45:09] local.INFO: data store ho gaya hai successfully  
+[2022-03-16 12:45:12] local.INFO: In OrganisationApiController->storeOrganisation()Array
+(
+    [_token] => Au3LAP1rYk2GEKkMmEYJQ6ZFbTEFX8lfJHBEtLa5
+    [org_name] => amita
+    [org_user_id] => 14
+    [org_user_email] => ami@gmail.com
+    [action] => Add
+    [hidden_id] => 
+)
+  
+[2022-03-16 12:45:12] local.INFO: Validating given Org types data...  
+[2022-03-16 12:45:12] local.INFO: Calling OrganisationApiController::getOrganisationAccessToken()  
+[2022-03-16 12:45:12] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:45:12] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:45:12] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:45:12] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:45:12] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:45:12] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:45:12] local.INFO: Getting the token!  
+[2022-03-16 12:45:12] local.INFO: response aa gya  
+[2022-03-16 12:45:12] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjE4YWMzMmMzMjgyZjkzZDgwMzJkNjhmZGIzMjU1ZjcwYWIzNTA3OGZiMTUxYzhiYmRlYmM5MDFlOGI2ODY4NWQzMTZkMjNmMmM3Y2QwYWZjIn0.eyJhdWQiOiI1IiwianRpIjoiMThhYzMyYzMyODJmOTNkODAzMmQ2OGZkYjMyNTVmNzBhYjM1MDc4ZmIxNTFjOGJiZGViYzkwMWU4YjY4Njg1ZDMxNmQyM2YyYzdjZDBhZmMiLCJpYXQiOjE2NDc0MzQ3MTIsIm5iZiI6MTY0NzQzNDcxMiwiZXhwIjoxNjc4OTcwNzEyLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.ArG-DRtxVCIRntIih73c5IFFWqiXmMPwJjXZkwQJhlZeSBU9NCx9NnqKKfTW2eXpbC8emmeMtGKSadYkevB7fqhnHFx3pj4OfpXrah4Aq7x8-N0ve5YAqICX8Cqc5frExmgvuGeufo0CG0qZbAKW_xGkBUTxjyxhgULHB5Vhdqi2sQ3bjhHenrhophu2JrW4J8OHWKuEI-CJvQBs82VT2GrdtX_fQwNUFzCrwJvGNrVn-wAJhphP-aeOV5S3_BgLoWWoFNDGPn1MEei4yyj614-wF7xaBbPn_Y66Qc_YSrMjwnfJ_3WeOFKqDZNKwjAjqYGhXnMSO6Z9OuZnWqv7lP5tTPp1W-ZLvHH9ZVqSwZrkO2IGnD0vOUAx-UnKbK1DrTlgGxuwVDlSqoXXX5WagGhRiFVVzpmK74Io6_6hXG2fX9q7JAe8SfSvcdbGATcM-Omwe1kw3uPogoO2Nq2YI-oL2CTC0iDCOLy8Dsumej187096sp9w5NXSHPEjYZPttB2xQet2SPneDDFMfD7k0_-DH8uS2q-SFhEwMKbkNOf0kQqhYDrQxsUykQfKzYqrpuGrL-py5-MBb1NQLjw-zfMIdu7fQJUQSplPDOdJdU-5tCQ3nwmt1nZZX5yfNTONTNZdsA8K6D9SObdO75QQQ743NIShUXHEzRUjVW09rxY  
+[2022-03-16 12:45:12] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now creating Task!  
+[2022-03-16 12:45:12] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL . SD_ORGANISATION_TYPE_MS_STORE_URL: http://wz-organisation-ms/api/v1/j/organization_types/store  
+[2022-03-16 12:45:13] local.INFO: Got the response from create Org types   
+[2022-03-16 12:45:13] local.INFO: data store ho gaya hai successfully  
+[2022-03-16 12:45:15] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:45:15] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:45:15] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:45:15] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:45:15] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:45:15] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:45:15] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:45:15] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:45:15] local.INFO: Getting the token!  
+[2022-03-16 12:45:15] local.INFO: response aa gya  
+[2022-03-16 12:45:15] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3YjE5NWUxZWU5YzdlZWFkNDIxOTczYTQxMzBiMzU4OTIwZjczMjFhZDdiMzBhNzE0NzBhZDA3NmYyMDNlNGJhYmJlZjYzNTAxMzkxNzNkIn0.eyJhdWQiOiI1IiwianRpIjoiOTdiMTk1ZTFlZTljN2VlYWQ0MjE5NzNhNDEzMGIzNTg5MjBmNzMyMWFkN2IzMGE3MTQ3MGFkMDc2ZjIwM2U0YmFiYmVmNjM1MDEzOTE3M2QiLCJpYXQiOjE2NDc0MzQ3MTUsIm5iZiI6MTY0NzQzNDcxNSwiZXhwIjoxNjc4OTcwNzE1LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.c_v3Qks7Rsr_QljAjTuAKG_-35a97r5iGL-HHyRiYALoC-RYUkyaUOpDKAq8KteTfd7Z8cwB5zuvLZB0oOA6tQoAljp8i4bcCClTMM_OXz1jbP7qMqZpuXHm4kmRRzyysS958IK3CBVowyVnVvE6B_okG-g_ZT0afb4hVDw68tQ_0O3zQ6DnXfEyMUKqEhdLPlLbZhdR1d1KpN6U5V1Y3Tc-7ZYS5qkrXjNgUNlr9kewaRG4OqczhaXhArL6djbnwfrST7VwgBR6-104Ziswsze6bYUmePE4QUgV3-3TAZfpransv3bwSMVIm2RxXhaAo9JNTPc7zYpLs2reX6r6HVF7WGRtTXhqnk7OOxCCsOg9_4v5yRPvqXViy0uYDrmjoanF14150XEsD224bY8OuLExGeDZIfecw8Y4wttLu49oJuEmOMbKjAhK7LSbnmfdjgU8y1GyTgF2zlVPMy0A-Fcj8tUVW7mTRhN6RiLIYKF2krgKi_8nkKkVFR1hny6T6jO2ujQL7Ur1cj7d_glosbtVy8N7XYBs26EOs3lzUsZnmijES5gcTFnCDFrzTmSMS44s7rl0klJlpUCoz1zWb8oJaY99MsrHyKbhh0ArK4OOWHiJFy_pBhpd0kvShUViHXAHXe9esPXAzvggos2ymJ_dJ7r4abY6-1DjFoStxX8  
+[2022-03-16 12:45:15] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:45:15] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:45:16] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:45:16] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:45:16] local.INFO: Number of objects in response: 1  
+[2022-03-16 12:45:18] local.INFO: delete button me id me kya aa rha hai15  
+[2022-03-16 12:45:18] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:45:18] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:45:18] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:45:18] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:45:18] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:45:18] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:45:18] local.INFO: Getting the token!  
+[2022-03-16 12:45:18] local.INFO: response aa gya  
+[2022-03-16 12:45:18] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc4NWRjNTBhNzQ4ZDExYjIyNTFiMTkzOWFmYjhiY2ExZmM1ZTU2MGM5YjQ4ZTFlYzVhZWJmYmMzNDUxNDZlOTY5NDNlMzNhMjZlYmZhNTUyIn0.eyJhdWQiOiI1IiwianRpIjoiNzg1ZGM1MGE3NDhkMTFiMjI1MWIxOTM5YWZiOGJjYTFmYzVlNTYwYzliNDhlMWVjNWFlYmZiYzM0NTE0NmU5Njk0M2UzM2EyNmViZmE1NTIiLCJpYXQiOjE2NDc0MzQ3MTgsIm5iZiI6MTY0NzQzNDcxOCwiZXhwIjoxNjc4OTcwNzE4LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.lJCh4jy0xjfeqnkGRWC_yhJCZdWCVEXBWMejjuoIl5qflMUbZbpTnszqHNBYhS6zYwvXB7KYGEwUe1pKqk3cn4xElNrGCnVcdtTK7Ja-gttBnfsGuTn1c7nZYkLjOzS4jTVeHUcjyubpTr1seXtd9WXH_wz8o5izovgYYCMRdM2Tmqz3DRKBS0L5npBzk3q63lcqsoUXvRXgOsp_TURZIyUS83SRGQvAgJSz1Cj488buL66DO5kVdmgrxj4z-gKg1rgoL0hCJEPswpSNblV3gpi1g7ml-eHRt2C0vp4gxDu9oRk43jk9jLwVJssz1LrSIf8dk_vzWLtQMwmRTml4v5C2lqgUzEf_XW-drVX_YDwzuJvpVDsdp_FAzbw4Fv56-g3XT0gihwxHAJTgLOUGFJ6dtH9TwFQ1pYT85Ysnufwjq9UpXYGd7Z6pBJQ8VjbD2pTOMtHH0eqoh1JYPpn_GLrHg4ZhUJjjWMPql2Qb76VugZ35mlRLsGKQmoPkjQIrpu8c5CZ9-r9xVavu9pqrWv6Wh1wQo5-z8G0eqk5iiKlC-nfa43BENkRpTXKHIWeSjA1xn4yjFih09rn4cQarHZSMyciHLl4C6Eq49tzqsKO5uCJUQISTZSlB2BX6WgxJt0DyX0fVIN7ITJzArGUhso-wBzw2T0wc4T6zdQiOk3c  
+[2022-03-16 12:45:18] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching categories!  
+[2022-03-16 12:45:18] local.INFO: Org types Delete Url: http://wz-organisation-ms/api/v1/j/organization_types/destroy/15  
+[2022-03-16 12:45:19] local.INFO: Got the response from data! delete ho gaya successfully..  
+[2022-03-16 12:45:24] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:45:24] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:45:24] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:45:24] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:45:24] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:45:24] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:45:24] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:45:24] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:45:24] local.INFO: Getting the token!  
+[2022-03-16 12:45:25] local.INFO: response aa gya  
+[2022-03-16 12:45:25] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjAyODYwMGFkOTVlODM3ZjEzNjNhNDNhMjZjMzdiYjkzY2FlZDlmY2FmNTYyY2FkYzNiMTUwMjIxZTkwZjBjYWQ3OGQ4ZTYyMjc3M2RhOTQzIn0.eyJhdWQiOiI1IiwianRpIjoiMDI4NjAwYWQ5NWU4MzdmMTM2M2E0M2EyNmMzN2JiOTNjYWVkOWZjYWY1NjJjYWRjM2IxNTAyMjFlOTBmMGNhZDc4ZDhlNjIyNzczZGE5NDMiLCJpYXQiOjE2NDc0MzQ3MjUsIm5iZiI6MTY0NzQzNDcyNSwiZXhwIjoxNjc4OTcwNzI1LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.kY10LKiXn9Rg_0fMeoSahRn9PA6s5RcnAffWJenJZM0dWCsUxk1YuHTnk8uF-xNUX-9I_BdS9CdyPVr196zNvKtefZfGL36Vs625EE0FqMEg9MLGUrzBQoLrggDofjyzTluiD3k2pclr0ZJtKQfOavaMfB559rLQcpD2Ci6YFcG3val7dbyMjF0JJtvzoCHSxdlLGFj1NJ4qqmkKDRXOMub-EOsfzViykRDSjgzzMQEJqNjO0lZy7B1SlFeKchXzkdNdJArkHHxPbz0raWNFFOtxzl0yXGIp6Zoa2r7HIHSnaTvyr6fFGM9KEI-cSn0oC_vP0RTc6ILHG6B2rkEUAsGLHOBxYwigtDuaJ_6OBQErin361OcpCnv3MRobNnIYk08AAUTM8vjYOMrfJz1pJH7ppx-ZbyBhmQhUKz3FsqOyapmK6IjrI304U_-JFj9TMsJcwvSCD74v2y8eJQrsEFLdIem77r2ZFYVfU7-p1cNqdwENaGprq5EcijYcLsUFIG1oJw3d1nw411dWCqS6fCMIxbZbCGNqLHNAogQYZpUbydVQJF0NU8rVuIKHX3ZiC6NlNs4j7RUH2ywxwv0Rk693o3qQosHJmwHAGDTzRmjq2TBsImkm_ZxLeu1N9wLJB3T1QGdpRxBKfXvU_1a7THhzv93wrNCXgjoOfVVEmg0  
+[2022-03-16 12:45:25] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:45:25] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:45:25] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:45:25] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:45:25] local.INFO: Number of objects in response: 0  
+[2022-03-16 12:46:15] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:46:15] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:46:15] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:46:15] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:46:15] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:46:15] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:46:15] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:46:15] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:46:15] local.INFO: Getting the token!  
+[2022-03-16 12:46:16] local.INFO: response aa gya  
+[2022-03-16 12:46:16] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijc2MThiODg0ZjFlYzU2NGM2YTkzMjU0OTY2NTY5MDY4NDVmOWMyMTdhOGE0NTY1YWEwNTI2Yzg2NmYwNDA3NWM5MDU4NTE3OTI4ZGQ2MGJiIn0.eyJhdWQiOiI1IiwianRpIjoiNzYxOGI4ODRmMWVjNTY0YzZhOTMyNTQ5NjY1NjkwNjg0NWY5YzIxN2E4YTQ1NjVhYTA1MjZjODY2ZjA0MDc1YzkwNTg1MTc5MjhkZDYwYmIiLCJpYXQiOjE2NDc0MzQ3NzYsIm5iZiI6MTY0NzQzNDc3NiwiZXhwIjoxNjc4OTcwNzc1LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.SumocnGSmHvwUVPsydt37105jTKrPFxvk7xumDBXZDzlAUy57TtTvJJA2mxSYFUNz1QSV7IKUnO9ciCEcF3qdjkMZ3PokbIu1f0ex_sHbJuNzBrcYK7DVRFxcLI0Si57yu4t4gcSZHjNIv0bBYfhijH8C7FrIB7XvbTty4EtrKjw-8kVBIgHPn5ueGguRSEpRryJoMJ8jXCGJD8kIBd6hFRV07Jw3vL8RC21kh0qdvClvDlUq3z2iToY7np0HRGSGpUkKcnQnjw6Q1FHivy0s-qdjiX-NiJKNgQdUPM1FtKwoF1P-ZBCR1uNeMMf3gLs_jTx3qEAHr9JYWXs4doioX0YqKnt4jyusFModcp6t6RF-EW0-IZbLe29cgtu0s2fxShWKE8Z8vXcDHpPmF2vpPj5ZWgaPOwUyh5nWx86zDqqsWS0bgo81BMpjZTqfTlL29zJTpmWrBWc6ar_TA2D9wnDabw9WbFnROtCY7UqRiw0aHksWAvCf7fupDNgFtkfWfx30YVLWdp9qnjk2tsaBFMZaHlzL-l2MLNOk91uAdfffHDB9GzIBpmSl0d7S7GUev4CVvhDd1kgCfnW-w2pIR0gQtxyRZWu57sMViY-ojgCSC8B4vsCUTcE2eVUcttbhAL8SkHHBrqGynZ1aMLqpmrkyCva7KxQOa691c4vMLQ  
+[2022-03-16 12:46:16] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:46:16] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:46:16] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:46:16] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:46:16] local.INFO: Number of objects in response: 0  
+[2022-03-16 12:46:19] local.INFO: In OrganisationApiController->storeOrganisation()Array
+(
+    [_token] => Au3LAP1rYk2GEKkMmEYJQ6ZFbTEFX8lfJHBEtLa5
+    [org_name] => asdasdasd
+    [org_user_id] => 14
+    [org_user_email] => ami@gmail.com
+    [action] => Add
+    [hidden_id] => 
+)
+  
+[2022-03-16 12:46:19] local.INFO: Validating given Org types data...  
+[2022-03-16 12:46:19] local.INFO: Calling OrganisationApiController::getOrganisationAccessToken()  
+[2022-03-16 12:46:19] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:46:19] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:46:19] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:46:19] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:46:19] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:46:19] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:46:19] local.INFO: Getting the token!  
+[2022-03-16 12:46:19] local.INFO: response aa gya  
+[2022-03-16 12:46:19] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhlMTBmYjBhOWJmNGJmOWIzOGE3YWVmYTcxM2M5MzIzODBmNjQ1NzY2OTlmZWY4YThlMGEwYTFiMGM3MzVhMDdjNjIyNGUyMjExMDFhMDVkIn0.eyJhdWQiOiI1IiwianRpIjoiOGUxMGZiMGE5YmY0YmY5YjM4YTdhZWZhNzEzYzkzMjM4MGY2NDU3NjY5OWZlZjhhOGUwYTBhMWIwYzczNWEwN2M2MjI0ZTIyMTEwMWEwNWQiLCJpYXQiOjE2NDc0MzQ3NzksIm5iZiI6MTY0NzQzNDc3OSwiZXhwIjoxNjc4OTcwNzc5LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.Y6ucDJNqa88EHgR19s20h07tugX2F9-5FaRfYwDXBxfxuAXSNdDH0sHb_w9lokSUo0WWwaKTZ-wrAtaa6ummzE0g0sfGHYHoSzj3aEQ4vuy6fhNykyDgqxl2qSkGU5bZw92uxJU9gMFndpfa2LCryOJlvPbahLwr9G6RZPd_Yao7EKEB_iecQUCz4-ZSDngAArPxXtN9-oOzTMGOgtikPGD6msAgeljwz9DD894pPiCARkaYivQrKUrYD3_b8lWx-T-rRsw8TZF2VSAadoXk9ceqhymzpTfOaVwtJnGMBL2IcP6jqxNJuqdQQF8JfAs52xNL2ijDqDsyeGOfpFjEAxJ8yNFN8kh6FxPNlybNDYIM5_ruB-5euuP5FXZs2xopGyMyEQQ2waR1taVJUQVhQk4S41TkX4cItVzJL_C17TOX-8b4z8pL-XXhemqW89LGTUFgYajmn0hXt2YUgSB9Ru3hxuIDTbtV3cacm1tVwjdYi5s63zJ48onfwYQf7f6TEuAD29-P_DDxDYUg0mRMv6JlvPiMRPV0-ESC_B3AHMKdl3jANCvUdBrabSskXQHXyw-CiWtsv7sYBso82xwA5N-z02vCzRuGCLvfBNRK8hBCpR4BF43kh9ULDiBBvDR5sjhlEvLKK-WVciIICE80DnbdeSy6BOD2ePUZJETLAN4  
+[2022-03-16 12:46:19] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now creating Task!  
+[2022-03-16 12:46:19] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL . SD_ORGANISATION_TYPE_MS_STORE_URL: http://wz-organisation-ms/api/v1/j/organization_types/store  
+[2022-03-16 12:46:19] local.INFO: Got the response from create Org types   
+[2022-03-16 12:46:19] local.INFO: data store ho gaya hai successfully  
+[2022-03-16 12:46:22] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:46:22] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:46:22] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:46:22] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:46:22] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:46:22] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:46:22] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:46:22] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:46:22] local.INFO: Getting the token!  
+[2022-03-16 12:46:22] local.INFO: response aa gya  
+[2022-03-16 12:46:22] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRhMjliZGE3OTVmZjA0NjViOWY5YzY0MmVmMDU4YWExZjFlN2RmNGQ1ZGEzZTY3MjgzNjIyM2I2NTg1NzQ3ZmRhMzdkYTcxYzcyMTA1ZWNjIn0.eyJhdWQiOiI1IiwianRpIjoiZGEyOWJkYTc5NWZmMDQ2NWI5ZjljNjQyZWYwNThhYTFmMWU3ZGY0ZDVkYTNlNjcyODM2MjIzYjY1ODU3NDdmZGEzN2RhNzFjNzIxMDVlY2MiLCJpYXQiOjE2NDc0MzQ3ODIsIm5iZiI6MTY0NzQzNDc4MiwiZXhwIjoxNjc4OTcwNzgyLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.mFATHmlRsFyK9np_VmRhMAPyi0fkRrQiEzAR6W0yIdmcV_J9G7TiP0iqynqLqRl492zPTI2-QwfQ6UrB5YJZVag7xyu_0G-flGQnMQHbRzpKcjgFec8ABu-c8xpw0FY8tWzNAKBwRerLm0HS8mDSauoZimgzuyBl5fAI6fFtnb1KRZ5Gb3ffm9WdXXnzTZhwdwervIL7gxH1kQ0ikuKtShGdHXYUg6YFJzoIXfmcJS_wAI5mAQPvC4ZEthxDu70AK6JswjqcBoFWdTecfGVBCZrhwyUj19q88aoTY-iREWJobVydPPzrCq4GCNQmGVdeNtab_xMWRZZY1Tn6eSq-CTJ56D-LiTrDezpr9V8KI5Yo95j69jjkdy_bocE9UgRM-wXvexz9TcqML5-ptCSDFAbfKbV0b9TpYgyCUzowYUnzgEH_gCXEkrVjTtMFlhyPfzHHa5D8TVVO-iCOxT6ZGSFm-iJc11igqAObjz9-d4c_Dzu_P76npWdCIX6JNPoWx-lil1-ChUf35nJZrFgiZmBlLHGMgY8pzNR2a0Ft_cfVhqA42L0VFtMWezpq49kop1fo6Gtdno_A6BE9E9XhgDmAf7nI3tsiw5SipvbD5o1fD1P-S9gzpE0F31oyZVdIX3O_fsILxU8TaKbi7Dr0580QkfkaCiYJ6mTTbvUFMPA  
+[2022-03-16 12:46:22] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:46:22] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:46:23] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:46:23] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:46:23] local.INFO: Number of objects in response: 1  
+[2022-03-16 12:46:26] local.INFO: delete button me id me kya aa rha hai16  
+[2022-03-16 12:46:26] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:46:26] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:46:26] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:46:26] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:46:26] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:46:26] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:46:26] local.INFO: Getting the token!  
+[2022-03-16 12:46:27] local.INFO: response aa gya  
+[2022-03-16 12:46:27] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFkZDAxNDYxYzhlYjM2Y2UwYzEwOTE3MjQ5ODM4ODdkMWZjYTMxNGVmOTk4NWQ4Y2NlMjM2Mjc1ZmJiZTgwNmZiYzI1NjU4NzM5YTdiMGE0In0.eyJhdWQiOiI1IiwianRpIjoiMWRkMDE0NjFjOGViMzZjZTBjMTA5MTcyNDk4Mzg4N2QxZmNhMzE0ZWY5OTg1ZDhjY2UyMzYyNzVmYmJlODA2ZmJjMjU2NTg3MzlhN2IwYTQiLCJpYXQiOjE2NDc0MzQ3ODcsIm5iZiI6MTY0NzQzNDc4NywiZXhwIjoxNjc4OTcwNzg2LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.isLLKeWMFCMcYK4vtWqJn_HUHuBZLpKc_-x4DI_W8TWOm0espDR9ETX81doHwYPYGJIDjRbbmufamsU-rsdcbMvTBjbFWV0iMKm_p5OfDQNgp-FzXwsGPl95_eMky6lwQlT-dUQXRX2-GQbrXnmK0JnZOnMP02BobXXaSJX2atv5-zE1kPmPxfVQGJ8lyNBVsKRrwbCsY0DdkYagsN5XcuCZY2JVTzpJMCdTH1nz1moMrHovlbsSRvM0zH1_kV-xAZ4yFlBW27m5DJ66GkUE4-KZ9Il2IXzgm5aBUWi1rEp54nh5jN85Ny3OrZKXQL5_S4JxoPAV50G88e1OaW6OhBKMqr_tKjYtQIJtxKsgo2GB7ePkKiuoMCQb2DBk4Q_fSJprN-BXscYssheAEPjq3WgWZ1O-YHy-wFmYkj04b2iX56tC_EF1CaWaaGKJhck-Ra3BBENRfcMeV-frJvBeMRJMmZRe69KpN41gkKlbgT1GGvt-GZzk_d8j3MIElRIwxkJzXodoRCgdYn7V3NA_ua2zsoC3Jg55QphBa09naS-5uqTgvsa-IVIpgsyB2SAAwNTzLlHu3AlQqhS2lo7ddXKwnYBHU3GS7ubUI_ddk6hnP0wdVubsQcppXzFvnK4gJ7BhrGxblNdkl66NrMpc0LnXTdvuPuIbmyyvrkN6Mus  
+[2022-03-16 12:46:27] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching categories!  
+[2022-03-16 12:46:27] local.INFO: Org types Delete Url: http://wz-organisation-ms/api/v1/j/organization_types/destroy/16  
+[2022-03-16 12:46:27] local.INFO: Got the response from data! delete ho gaya successfully..  
+[2022-03-16 12:47:13] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:47:13] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:47:13] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:47:13] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:47:13] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:47:13] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:47:13] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:47:13] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:47:13] local.INFO: Getting the token!  
+[2022-03-16 12:47:14] local.INFO: response aa gya  
+[2022-03-16 12:47:14] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImJlOWMzZGM4NzU4MmFiYmUyNGI1NjgxYWIxMWQ1OWRiYzVkNDc1ZjFlODIxYWE1ZDY1N2I5ZjhmYTY2ZGU4YjNmZTUzNjk0NmYyYWNlYjNkIn0.eyJhdWQiOiI1IiwianRpIjoiYmU5YzNkYzg3NTgyYWJiZTI0YjU2ODFhYjExZDU5ZGJjNWQ0NzVmMWU4MjFhYTVkNjU3YjlmOGZhNjZkZThiM2ZlNTM2OTQ2ZjJhY2ViM2QiLCJpYXQiOjE2NDc0MzQ4MzQsIm5iZiI6MTY0NzQzNDgzNCwiZXhwIjoxNjc4OTcwODM0LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.AlsjzetIbmS0U1941BmUT6Y8wQwCxj8NpQfEBtOGnaYsY3lq8fdwN3o7k5_3pbYObx_kLKaQAdq6u2XKgOj39kO5y6QkeBMnF16dW5sb1LXFr1U5vR52T3YEGjxMtko_5KgTyPUhMEERxpAeJ_QQY7wz5EU4wqBxLmP26nnU8C_o-LE0nXZorDwaufmKgvVlbY_rkHh76UHVpWosV0qQgk2d9SCXIIarNCGqMUJYDBNgpjsbOmE8nyTMhC3T25IBM-R29cKASemZP-vOU5Pb29zRwAn_0uPYiALoTCFRcOJpqgD7-gMTdUiDdG1iZibgYPz1mWgOljiOaFj4VKSrhuV5jaMpKPaGe8wIHKmf94P4aIvx55mMRhnlOK5MPBqqjAHalk3owYOCMT17AdV27cW3EmciVTPvmY6OaHj2WFBTTXKO8WN05oGhOV4MBp-4KVFZUFnlutiAXDbsyaeMyBQwsG6jPGDcbeb4ruRMtVdYmo8J4d6alJf5HOwqHTwUKK7CH0elsGZ-M4g655_U8PYkVk4hTTusR_KI0V7GTFeCbEO66xrQk4k93fxAyF0MYZW7t0kGgKqMT9xCCzDlMiiwcyNbgQB_BYIq8aFgZbdJHtfBt8CKfqNhTJs6prn7AwcuTrtujepKyWA_3nc9YfIUw21AhOAxHsY0MO3sZPk  
+[2022-03-16 12:47:14] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:47:14] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:47:14] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:47:14] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:47:14] local.INFO: Number of objects in response: 0  
+[2022-03-16 12:48:42] local.INFO: In OrganisationApiController->storeOrganisation()Array
+(
+    [_token] => Au3LAP1rYk2GEKkMmEYJQ6ZFbTEFX8lfJHBEtLa5
+    [org_name] => randi
+    [org_user_id] => 14
+    [org_user_email] => ami@gmail.com
+    [action] => Add
+    [hidden_id] => 
+)
+  
+[2022-03-16 12:48:42] local.INFO: Validating given Org types data...  
+[2022-03-16 12:48:42] local.INFO: Calling OrganisationApiController::getOrganisationAccessToken()  
+[2022-03-16 12:48:42] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:48:42] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:48:42] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:48:42] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:48:42] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:48:42] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:48:42] local.INFO: Getting the token!  
+[2022-03-16 12:48:42] local.INFO: response aa gya  
+[2022-03-16 12:48:42] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjljOGE3OTI5Y2I1MjQ1ZjFkYWRmNTVhYzljZWY1MWMwZWNlZmIzYWY1ZDY1MjVhM2VlOTdkOTAyMmE2ZTg0YzAwNTc2NzlhZTFhN2M3YTllIn0.eyJhdWQiOiI1IiwianRpIjoiOWM4YTc5MjljYjUyNDVmMWRhZGY1NWFjOWNlZjUxYzBlY2VmYjNhZjVkNjUyNWEzZWU5N2Q5MDIyYTZlODRjMDA1NzY3OWFlMWE3YzdhOWUiLCJpYXQiOjE2NDc0MzQ5MjIsIm5iZiI6MTY0NzQzNDkyMiwiZXhwIjoxNjc4OTcwOTIyLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.fTV_-ezS8Oe_7c5BfvnCOc4HvRWt2ztNJsJ3AigNfkpvgpUOINDGnOMp7qMSt89HWH9wXjXZUoBYC0pOG9_5Dvgb6PsOOVD5VemCizhOIdle-vVr-j4CuviNB37ZwuD7RnZvhOswUkutdoymL_fH4EFNDtY3_Yer6HStNMW0a8gxnebDNEfEOVXg64-tp_YCMJATVX28n3sIVTPQVVly-GF8mdJnpYW1MkKTeV90d16mQcW2jiuFknRjAS3fQM-tBSYNk_zJlDV_1BC-udbAl1dzin756aK0gcrVcBxPPXJE-BJyOxURijb2kB16OtHqpP0pw1uEiyCIiULZp4XDT2iPjiBu-oyI9XNrlTsbCSVRhZJjaRYYWNLQbHHJstHa5fWDY7DWmeN38i4UG78Q4mlahn6EPc4T0dm1DEmi0emd8YIbFiF49NyQuMxhFAMIpUDu1M55kgYQg7HIsjjntgJxlP1nmmwD9y2Q_nzHekMFAz06hnI5gMJHCEfo2kCkic6OLfGVK9o8_bcTrwmteziYKHe_sX3BYwuyFGk8SRz_I1DJjGOkGm3WHrb_S0OQWVGQNYtfcKjB8eWwZ7QB9-en6JPJ3thvTsy7bTh8__wndAZbOpoW5souzKEeAKcTJ9w43Vzvv2ivgSWbFWtdqdhbpngNd1gGayx8NzKZMkg  
+[2022-03-16 12:48:42] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now creating Task!  
+[2022-03-16 12:48:42] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL . SD_ORGANISATION_TYPE_MS_STORE_URL: http://wz-organisation-ms/api/v1/j/organization_types/store  
+[2022-03-16 12:48:43] local.INFO: Got the response from create Org types   
+[2022-03-16 12:48:43] local.INFO: data store ho gaya hai successfully  
+[2022-03-16 12:48:46] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:48:46] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:48:46] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:48:46] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:48:46] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:48:46] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:48:46] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:48:46] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:48:46] local.INFO: Getting the token!  
+[2022-03-16 12:48:47] local.INFO: response aa gya  
+[2022-03-16 12:48:47] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjdjZmE4NzZlODNhOWEyMzllN2M4OWRhYzI2YTY0YTViMDcyZWE0OGQ5YjhiODExYzM1YWE0OGQ2ZDQ2ZGUyMDdjMjk3Yzg0NzVmNThlNTYyIn0.eyJhdWQiOiI1IiwianRpIjoiN2NmYTg3NmU4M2E5YTIzOWU3Yzg5ZGFjMjZhNjRhNWIwNzJlYTQ4ZDliOGI4MTFjMzVhYTQ4ZDZkNDZkZTIwN2MyOTdjODQ3NWY1OGU1NjIiLCJpYXQiOjE2NDc0MzQ5MjcsIm5iZiI6MTY0NzQzNDkyNywiZXhwIjoxNjc4OTcwOTI3LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.lbBrpbimCTgZsspzbuYl6I5IepzNehCZo5WHEEN7rm_e1-HE7v7-SqrCA3FY4xOdLguLQkaWMwLaZkC1YkkOkrux8mf-J_SsiBcLBmIFkaql5NQVPV1l0DODCN9dGAQEchUcKKkMw33AmQk0MBxgntEHB771iMLFWnp4a-MFnQxqDGV0zg-fZwytoAKI7Nep48in9rWqouUu_CpN__IXkT9zYRiI51sW5HVT7pIU14phKdj8HgrmJVrFLeiGi2rlybXXyeE7lvfbayqW9xcOo4U9YzIrdFqU0HOFpbARSodAsU_asqpw3dOUcuBulSVCPZTQArVWS-UvaGMVIQx5ieFQruzfCGd2gZcvORQJcUH0ytaKYcmMn6a5UWGGnCjakKy8zcK1PLCDU7YDQtaIRpsxlMV_5oj1NkUTQs8_F0_vedAczaIUii8WmjNxVEcd504qCjx9Awz0JmxGYjGafnFdczkY_pAxLjQy1dIzycm6G8gHNfjJ76XOQ49QSmrUUQEyrP_OCXq1WdCesoogjbEGLx15JR9pqS5bwHUqV3UihXO3MIu8YyUodhniEF8GEQzGYQdhErcim8XtAw1BO96W-ILa2MsycV9wVuTq1AoOrq3MXPNz5bxEqimk6r4VyHBr_tN9vvSmQKFeFgPXYIfRbitZlB8B9pk0p-WTpgY  
+[2022-03-16 12:48:47] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:48:47] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:48:47] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:48:47] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:48:47] local.INFO: Number of objects in response: 1  
+[2022-03-16 12:48:56] local.INFO: delete button me id me kya aa rha hai17  
+[2022-03-16 12:48:56] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:48:56] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:48:56] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:48:56] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:48:56] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:48:56] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:48:56] local.INFO: Getting the token!  
+[2022-03-16 12:48:56] local.INFO: response aa gya  
+[2022-03-16 12:48:56] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImNhZmU0NjZiMmI0YmUxN2QzM2I4Yzc0ZDQ2ZDhhMDFhYTgyODg5YmUyNGUwMTZiMzkwOThhZWFhMTAzMzBhMjc1MDQzOWJjYmU5YjJiN2I3In0.eyJhdWQiOiI1IiwianRpIjoiY2FmZTQ2NmIyYjRiZTE3ZDMzYjhjNzRkNDZkOGEwMWFhODI4ODliZTI0ZTAxNmIzOTA5OGFlYWExMDMzMGEyNzUwNDM5YmNiZTliMmI3YjciLCJpYXQiOjE2NDc0MzQ5MzYsIm5iZiI6MTY0NzQzNDkzNiwiZXhwIjoxNjc4OTcwOTM2LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.tW4SaQv4yzMEXFWcJC4iogPENF7XFQyjbaEug0yTleXb8vunYy-csbT8XjnAfguxXrYd8jDMBOHAOG3nv7Zt4jKKoheavkRxU0yYd6FyPjMY50v_HCtfZeYb8nTuEv-Ed2yQwJKGJzFo6YPpxYtP77ICy8pJCeM_y74-V0R3tDKCmvReaUS34HRmbs_vkMVrUlz9KRPMS6dpvtQbB8NNnUYi2peo3JRrQIBqyTSMaYX3KEddD1jaduRh-cWP2WVu2lLc5UGWhE9HCX0rw1NCHHlt8wtgN6mkuk12EcVQPQLbU3fmQumk8v6KlVnxWzfNGoSGu3EwTBJzh62Fe6uyP8H5672k5yi5yuGd0LJ5nMv-fQyy4HtAEcDQtahIKDpZCNJdSv-AY2OzHit1Ja6Vj3Prb6mWOHb6eYPNuyK7cpX-Exuev7FFc8ghEobJp9mw9LUeuNT1dNWmoUT49SugSK1hJ-X9OnDWeuYvaUd7hT4ah2rqG1SYExCyvn1Yuc4Zw0BCzPr7NwbBZl6Vw4dBzvbQzziCXnIMwOl6lnxkvUb5JI6LAN-rq2tIqP90uAv-WCVauPUamW7tp6nJhSbWZ3Ryd6rC6hn2pI-ov-eXZ9hDCaaAXni6Af6cFNK9AJfGOvqABsnzNjlosIkisSfNf27FPUkKBLv_hbJJ_fZzEQI  
+[2022-03-16 12:48:56] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching categories!  
+[2022-03-16 12:48:56] local.INFO: Org types Delete Url: http://wz-organisation-ms/api/v1/j/organization_types/destroy/17  
+[2022-03-16 12:48:57] local.INFO: Got the response from data! delete ho gaya successfully..  
+[2022-03-16 12:49:00] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:49:00] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:49:00] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:49:00] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:49:00] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:49:00] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:49:00] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:49:00] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:49:00] local.INFO: Getting the token!  
+[2022-03-16 12:49:01] local.INFO: response aa gya  
+[2022-03-16 12:49:01] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY5ZDllYjYyMGIwNDBlZTIzNzI1NzgzMzdiMGUyZTU0YzQ3ZTUxNWYxYWFlZTM0ODRhNDFmM2NhNDc5MWZhYmU2Mzk0ZGNjOGMyY2RlY2I0In0.eyJhdWQiOiI1IiwianRpIjoiZjlkOWViNjIwYjA0MGVlMjM3MjU3ODMzN2IwZTJlNTRjNDdlNTE1ZjFhYWVlMzQ4NGE0MWYzY2E0NzkxZmFiZTYzOTRkY2M4YzJjZGVjYjQiLCJpYXQiOjE2NDc0MzQ5NDEsIm5iZiI6MTY0NzQzNDk0MSwiZXhwIjoxNjc4OTcwOTQxLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.tl36JU45RboB3lLUQjMQJlVWzJCIS_OahE6viEf3AskufX9IG_yMc-vJZbbi5RI3H9LlfigKFreTGGA3jcw58Mygw9nkKxMP6aIDVx65Wdse7D31XI-ZStpInmVjgMyDLZLE1brdjJa5DB_iqghB7cOrLWNGhPM9mD_ogXArmRVIA8tyFPZQljWlkGRSQ5Yo6ZJzgwr8q7F3yeAdGMLADBu4v2ZcQ1o2JKLWi04SaQSY7M2LaEXPc9OyuIwU0WAj9t4W5JbkjlewnH4_9g7vnZ_dSQsFV3nbZvXneTiUGicbwS2SO285cSdlVubzKepZnaziqeKH-Jey9RdG_JQOtCxtAAjLDPi66pekU2VbROYB1MOe9agjHStOIMnnVqXbLdpLsfGe2yoZyQGEqNGVY8tC6Q4ZRIgY4XUKtIUE8g2IroUnV5RSGeUU6400zfDs2C-e8ISgRCgzKM2bXS7EX0guwymRNF3gqghb1qR-YKuB7NsWeCNtj7rWCnHremAtPqvyWDcD10YHFfB1sOUva_WfHvm8wVDTNe04cfLvzZdjFCiO6S8ryMu4342bx5YSqSsvX7bB3BxclfN4BRHCxEAIwWnjIhk7b_3Q_cdJBvHH4Jwg7jgXJpETtUzp7zSLjWOgL-k2qzDh5eiqdjsKu6ZLo9F3-m8u5dxGNDHiy-E  
+[2022-03-16 12:49:01] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:49:01] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:49:02] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:49:02] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:49:02] local.INFO: Number of objects in response: 0  
+[2022-03-16 12:49:49] local.INFO: In OrganisationApiController->storeOrganisation()Array
+(
+    [_token] => Au3LAP1rYk2GEKkMmEYJQ6ZFbTEFX8lfJHBEtLa5
+    [org_name] => smar
+    [org_user_id] => 14
+    [org_user_email] => ami@gmail.com
+    [action] => Add
+    [hidden_id] => 
+)
+  
+[2022-03-16 12:49:49] local.INFO: Validating given Org types data...  
+[2022-03-16 12:49:49] local.INFO: Calling OrganisationApiController::getOrganisationAccessToken()  
+[2022-03-16 12:49:49] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:49:49] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:49:49] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:49:49] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:49:49] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:49:49] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:49:49] local.INFO: Getting the token!  
+[2022-03-16 12:49:49] local.INFO: response aa gya  
+[2022-03-16 12:49:49] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjJiZDQ0YjQzOTk2MzU5MDI3Nzc3MjZiYmQ5NzEyOTQwOTJhOGZjMDllMjM3NjQ2ZDcxMTAyZTZlMjc4MWU1OGJhOWU3NzcwZTZmZDdmZmI0In0.eyJhdWQiOiI1IiwianRpIjoiMmJkNDRiNDM5OTYzNTkwMjc3NzcyNmJiZDk3MTI5NDA5MmE4ZmMwOWUyMzc2NDZkNzExMDJlNmUyNzgxZTU4YmE5ZTc3NzBlNmZkN2ZmYjQiLCJpYXQiOjE2NDc0MzQ5ODksIm5iZiI6MTY0NzQzNDk4OSwiZXhwIjoxNjc4OTcwOTg5LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.QpEfKp0VBbfmS1ij3xF5mt4oOaKXwzI4cVEW8Qw9-YSaZrjxudcdenMSlxeevbD2-FgGLQW8k-g7snuGCCTLiFHM6fN3svJK6sgc8U6HcLPyWPFCCbmYhmxkwgKU1CFMZBgxMBTm7JMwnDfaXG6e1m_YOeU1vVBwI7iFnjPM-oal_9FEesGO8WE2GfrJYDa4ekeQBGqKVKhCmeCbpo-qxDLQbsS4IB7NbrOLUDngEIfhOXDTLzv98QhK4irzkSRrb0pFt90XaWbzbx_4V3a3RQhM-6KyEi0oXrlPG19-SyuBDDRPDvInnLPEsO3Fm8suUpfd4FQyFWt_c-dhQeq1r-Z1JX4kIBiZ6H1913rZ062tVmGPQ_7820KOK1Z8efihs_nqYhsMDZU4URPFG-ePaAOvVBgDkuKACi8mSBdZ8vitFmSYV7cbxsdj9AWHIdxLRtnnvvd6fEPTJbrJbkqHzFKkw1OTSvgbbzTePbIVaVMSfJBMlbarHS43YG9xBC3glcPmVaZ9Zq_QZGp-_SW3HHeBzr5RJaF75JKd--mNJx86ELFAI-Yj_lVhL_RXBBKaOOemA5M9hwUtRdaEAtcqL_DB-hmzqwc52RhTMPe-wRRP7jTzXP7jtVZSDWu8G_rl1ldnwMp7jBfbvzjgG50bPoKp5A5d4LO_S0ZzFCaSf8k  
+[2022-03-16 12:49:49] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now creating Task!  
+[2022-03-16 12:49:49] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL . SD_ORGANISATION_TYPE_MS_STORE_URL: http://wz-organisation-ms/api/v1/j/organization_types/store  
+[2022-03-16 12:49:49] local.INFO: Got the response from create Org types   
+[2022-03-16 12:49:49] local.INFO: data store ho gaya hai successfully  
+[2022-03-16 12:49:52] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:49:52] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:49:52] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:49:52] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:49:52] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:49:52] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:49:52] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:49:52] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:49:52] local.INFO: Getting the token!  
+[2022-03-16 12:49:52] local.INFO: response aa gya  
+[2022-03-16 12:49:52] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjlkZGQwNGI3MzA0ZTA4MTFmMjgzYTYzNTA1NmUzZTc0ZDYzMGQ4MTUzMmJlZTIyMTkwMGYzNjVjZDA4YWQyNzE5ZmNhNWJkNGYzZTZlYWFjIn0.eyJhdWQiOiI1IiwianRpIjoiOWRkZDA0YjczMDRlMDgxMWYyODNhNjM1MDU2ZTNlNzRkNjMwZDgxNTMyYmVlMjIxOTAwZjM2NWNkMDhhZDI3MTlmY2E1YmQ0ZjNlNmVhYWMiLCJpYXQiOjE2NDc0MzQ5OTIsIm5iZiI6MTY0NzQzNDk5MiwiZXhwIjoxNjc4OTcwOTkyLCJzdWIiOiIiLCJzY29wZXMiOltdfQ.MMuXwTK8dejvQOV_zWNiP2jhggj1UM8-cArT-uTfVAOLUCOC1UCAIOzWTuM0gZcB_HWhJbxu1OCZnw_MgTvcDTWSoY-ZNCcT-G-ebIF-RFPjMusv99FF_oKYmuA_bLJzWuONF7CwqOHBXJt38UD62vLYGPzFJITz2fZATmdvxNLIZuyNxXlzKjYrQA8SySM5oO1tXORsgl0MENCgEqqDPj7N1MmU6Q-dUPHFhEGvS12aT9BTmOf6MtA5Ah-9LGXoVw3Dsj29jX7REkzutj_RtfRiV1jENZbOuKREvPa9iWr1WyVJnNrVG_Ct-eqOEKANdbIYirbpp0WCtZ8AvvXjBWSyzrPJuNm_hKxahn8D5-xtRlZVLrax5tr_Db65QTJ_N25N2A4xowJnjoByF-fI_6IcSC3ox8KJb_cFjL06GYDSiPvZJ7A3xj_EWCo5ZlOHimLrIIuPXRm6RhSMRnqncWGJKZTQszFHa648ZupgzLeky0ApAxoBLPbxuNulv1zRC35X9VCIECl2wK1lGWA74aj6wUjTtIg52bOYUyAH3jqvudX4XBtjW4w_bo9TN-zp8DSDWNMh7Aey_b5eiUDzKJlPjnay9mUdd1f2_yaJNJxWgTATOtkEwC4SgDQT67t7aGegjntSgHzvQbt1wLviGwVaTxTGA8O0vQSYuvpN-FU  
+[2022-03-16 12:49:52] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:49:52] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:49:52] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:49:52] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:49:52] local.INFO: Number of objects in response: 1  
+[2022-03-16 12:49:55] local.INFO: delete button me id me kya aa rha hai18  
+[2022-03-16 12:49:55] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:49:55] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:49:55] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:49:55] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:49:55] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:49:55] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:49:55] local.INFO: Getting the token!  
+[2022-03-16 12:49:55] local.INFO: response aa gya  
+[2022-03-16 12:49:55] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjQxZWFmNDY4MTI0M2UzYjk4YTg3Y2MwNmJkZWVhNDdjZmE4YmExNTA4ZDM2MDBiZDRmMmUyMmRhZjZhYzFlY2U0N2U5NGM4Nzg3YTY2ZWVkIn0.eyJhdWQiOiI1IiwianRpIjoiNDFlYWY0NjgxMjQzZTNiOThhODdjYzA2YmRlZWE0N2NmYThiYTE1MDhkMzYwMGJkNGYyZTIyZGFmNmFjMWVjZTQ3ZTk0Yzg3ODdhNjZlZWQiLCJpYXQiOjE2NDc0MzQ5OTUsIm5iZiI6MTY0NzQzNDk5NSwiZXhwIjoxNjc4OTcwOTk1LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.hmFlzqmcixcMzFnhQ2r8m-JU7E-sfyCYYO70FaYQWgB-uytSHzpA7hRmLdYi9CfXOEmtnaBcr117g_53Se54aEv94DTqRoSbsgtzAz53YrtSXLKwI6l6fXqwd9tQ995zKAqLoPSRYnmWKqtJ8975VeD6RBtH9OY7_yQt8EswV5G6omm80Rj7Rhrzl7Dk9emYnWTsDCw6PRMBu9G-ohe_CIJHCSDsA8WV3gMaKOPjd9NrRrK7eU00gsjghu5nDB41Z_pz80ngM6wCGobStjlrNYZNRCuC_2XnYJ5ZalUq_VhehFRuxydax_eBJtUtG1tfin90aL2ptXuPot7vSiDyI4_8Urm_4lNYKCjl0KbJ66IqcXilhJVwdgpz-EfBBkyqQD6ryQRc74Lwu_5mRx2tpzTku1wgrKV2aJxShRlQR4PgzaL_EEbRs_BbT_n3BJDccfr4MO-3IWuxmNTJ3XQK3K8Kn9JCpcdJtLt1CkEUh8U9u1N0LRqsFf-nMeJqIlzejVRoJv-A-Zvw4mDTnUD504YFZpwfXcW_GYlah44dqG8kzFdybRyQ5rwdGKlLZCS04mW_Q48feCzocBTgPvzol3rM-Uk8r6OSo5-jrpIFGhtDiBKwttuvLd64fIZuAjwSwQo2Fr0zePe_InAJW60q3g1vKBBL-R5ABbIikp_CHgQ  
+[2022-03-16 12:49:55] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching categories!  
+[2022-03-16 12:49:55] local.INFO: Org types Delete Url: http://wz-organisation-ms/api/v1/j/organization_types/destroy/18  
+[2022-03-16 12:49:56] local.INFO: Got the response from data! delete ho gaya successfully..  
+[2022-03-16 12:49:59] local.INFO: In OrganisationApiController function getOrganisation  
+[2022-03-16 12:49:59] local.INFO: SD_ORGANISATION_TYPE_MS_ALL_URL: /api/v1/j/organization_types  
+[2022-03-16 12:49:59] local.INFO: In OrganisationApiController-> getOrganisationAccessToken()  
+[2022-03-16 12:49:59] local.INFO: SD_ORGANISATION_TYPE_MS_BASE_URL:http://wz-organisation-ms  
+[2022-03-16 12:49:59] local.INFO: SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL: /oauth/token  
+[2022-03-16 12:49:59] local.INFO: SD_ORGANISATION_TYPE_MS_GRAND_TYPE: client_credentials  
+[2022-03-16 12:49:59] local.INFO: SD_ORGANISATION_TYPE_MS_CLIENT_ID: 5  
+[2022-03-16 12:49:59] local.INFO: SD_ORGANISATION_TYPE_MS_SECRET: Dxtq4UQjyp0Yf6WIQFhaHJIU2nATgX7xgtcLPwpk  
+[2022-03-16 12:49:59] local.INFO: Getting the token!  
+[2022-03-16 12:50:00] local.INFO: response aa gya  
+[2022-03-16 12:50:00] local.INFO: this api is Got the token!eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVhNDY0OTk5ZTNmZjJiZTliNWFhNjg0OGYxN2Q5ZThiOTM4OTc0ZGU3NDk5ZWY1NDIzZWQ5ZTIxMzM5YWY2MTZmMDY2NmNhNzJiNGRkYThkIn0.eyJhdWQiOiI1IiwianRpIjoiNWE0NjQ5OTllM2ZmMmJlOWI1YWE2ODQ4ZjE3ZDllOGI5Mzg5NzRkZTc0OTllZjU0MjNlZDllMjEzMzlhZjYxNmYwNjY2Y2E3MmI0ZGRhOGQiLCJpYXQiOjE2NDc0MzQ5OTksIm5iZiI6MTY0NzQzNDk5OSwiZXhwIjoxNjc4OTcwOTk5LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.dcMWRR-4zOcHYWbBjGi3vsdcvMlTXfqPorxo7o2D1HS0k-HwX9lLO0TZmtPe3pzp84VMPlSnbqdbpphjs1va08ULQO-ir3VVEigemBcJgKuUhZ1WmT0sA9M3Y4EduF77yAYe76BfzagqitpCXcR9VcY7iwO3yK_--KmY1i5nuIWQbqwwbJtKqEGrRmhj6avgtuVPh5xr4BbJ-wAJuWJKGAuVXIENhNbtdOqr8nxiOYmDY9ZSN8lpc_YZK2Sb1mhyk1nRMq0vQPMkjc--eOSqZpDFT_M-CcsjWAccpo7jaJySlwI65wYOZaIcFZHL0eJd4t2Ma0t0lOFCyte-MAuxwLRNAe3f0uVL96UWPYyRSDQDAJUmHeZlJv-QzWaxBmrcLDRrHU_uWZ0tfQ2MvJ_4OhIEOlBJ0o7Y3e_FoW4AzuS5c0Io_-F-BoTn2txyFYUHONG4fchDIH9a8L4Ze8_Ajh0QzBXpkoH2fmRu5_25R_qTB0icIblBEnWpqbr_dZ2k7p2jkmo1Xk42hy0at94lXd8R_XPNhBqXikCaFWdLQaID0CPc8j34IHLqotmKgcC7DMOJeEBMbh-whPM77LQ2XQOngGTyFRDwFoBjhtDRJSeADuzDeuZs2o5_fUf6rYG7olvQf4ao7shj05gKsAJ3GrXHlRCMl5KR3YMrz1QMbEY  
+[2022-03-16 12:50:00] local.INFO: Got the access token from OrganisationApiController::getOrganisationAccessToken(). Now fetching User!  
+[2022-03-16 12:50:00] local.INFO: ALL URL: http://wz-organisation-ms/api/v1/j/organization_types/14  
+[2022-03-16 12:50:00] local.INFO: Got the Response from SD Tasktype MS  
+[2022-03-16 12:50:00] local.INFO: Store hone ke baad index page par value aa raha hai !  
+[2022-03-16 12:50:00] local.INFO: Number of objects in response: 0  

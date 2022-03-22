@@ -1,0 +1,14 @@
+.mdc-top-app-bar {
+    background-color: #e9eaef;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 7
+px
+ 20
+px
+;
+    z-index: 9;
+    position: static;
+    margin-top: -78
+px
+;
+}
