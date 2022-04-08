@@ -81,10 +81,9 @@ Route::get('orgs/lists/{org_slug}','Admin\ManagerController@All_list_Org_withdas
 // All organization list close
 
 Route::post('members/store','Admin\ManagerController@member_store')->name('managerstore');
-Route::get('member_active_deactive_user/{id}','Admin\ManagerController@member_active_deactive_user')->name('memberedit');
+
 Route::post('managers/update','Admin\ManagerController@member_update')->name('memberupdate');
-// user invited and removed open
-Route::get('member_invited_removed_user/{id}','Admin\ManagerController@m_invited_removed_user')->name('m_edit');
+
 Route::get('/auto-complete-search-query', 'Admin\ManagerController@query')->name('autocomplete.search.query');
 // user invited and removed close
 Route::get('managers/del/{id}','Admin\ManagerController@member_del')->name('memberdel');

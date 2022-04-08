@@ -17,7 +17,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Environmentf
+    | Application Environment
     |--------------------------------------------------------------------------
     |
     | This value determines the "environment" your application is currently
@@ -122,10 +122,8 @@ return [
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-
-    // Admin all api url from .env
-
-    'SD_ORGANISATION_TYPE_MS_BASE_URL'=> env('SD_ORGANISATION_TYPE_MS_BASE_URL','not found in .env file'),
+	
+	 'SD_ORGANISATION_TYPE_MS_BASE_URL'=> env('SD_ORGANISATION_TYPE_MS_BASE_URL','not found in .env file'),
     'SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL'=> env('SD_ORGANISATION_TYPE_MS_OAUTH_TOKEN_URL','not found in .env file'),
     'SD_ORGANISATION_TYPE_MS_GRAND_TYPE'=> env('SD_ORGANISATION_TYPE_MS_GRAND_TYPE','not found in .env file'),
     'SD_ORGANISATION_TYPE_MS_CLIENT_ID'=> env('SD_ORGANISATION_TYPE_MS_CLIENT_ID','not found in .env file'),
@@ -139,7 +137,12 @@ return [
     'SD_ORGANISATION_TYPE_MS_STORE_ROLE_ORG_NAME_URL'=> env('SD_ORGANISATION_TYPE_MS_STORE_ROLE_ORG_NAME_URL','not found in .env file'),
     'SD_ORGANISATION_TYPE_MS_AFTER_INVITE_GET_USER_ALL_URL'=> env('SD_ORGANISATION_TYPE_MS_AFTER_INVITE_GET_USER_ALL_URL','not found in .env file'),
     'SD_ORGANISATION_TYPE_MS_INVITED_USER_REGISTER_STORE_URL'=> env('SD_ORGANISATION_TYPE_MS_INVITED_USER_REGISTER_STORE_URL','not found in .env file'),
-    
+    'SD_ORGANISATION_TYPE_MS_ORGANISATION_REMOVE_FROM_ADMIN_TO_USER_URL' =>env('SD_ORGANISATION_TYPE_MS_ORGANISATION_REMOVE_FROM_ADMIN_TO_USER_URL','not found in .env file'),
+    'SD_ORGANISATION_TYPE_MS_ORGANISATION_BLOCK_AND_ACTIVE_URL' =>env('SD_ORGANISATION_TYPE_MS_ORGANISATION_BLOCK_AND_ACTIVE_URL','not found in .env file'),
+    'SD_ORGANISATION_TYPE_MS_MANAGER_GETTING_URL' =>env('SD_ORGANISATION_TYPE_MS_MANAGER_GETTING_URL','not found in .env file'),
+	
+	// Admin all api url from .env
+
     'SD_ADMIN_MS_BASE_URL'=> env('SD_ADMIN_MS_BASE_URL','not found in .env file'),
     'SD_ADMIN_MS_OAUTH_TOKEN_URL'=> env('SD_ADMIN_MS_OAUTH_TOKEN_URL','not found in .env file'),
     'SD_ADMIN_MS_GRAND_TYPE'=> env('SD_ADMIN_MS_GRAND_TYPE','not found in .env file'),
@@ -268,8 +271,8 @@ return [
     'SD_WEBSITE_RANKING_MS_DELETE_URL'=> env('SD_WEBSITE_RANKING_MS_DELETE_URL','not found in .env file'),
     'SD_WEBSITE_RANKING_MS_EDIT'=> env('SD_WEBSITE_RANKING_MS_EDIT','not found in .env file'),
     'SD_WEBSITE_RANKING_MS_UPDATE' =>env('SD_WEBSITE_RANKING_MS_UPDATE','not found in .env file'),
-
-    // Page Ranking api from .env
+     
+    // Page Ranking api from .env 
     'SD_PAGE_RANKING_MS_BASE_URL'=> env('SD_PAGE_RANKING_MS_BASE_URL','not found in .env file'),
     'SD_PAGE_RANKING_MS_OAUTH_TOKEN_URL'=> env('SD_PAGE_RANKING_MS_OAUTH_TOKEN_URL','not found in .env file'),
     'SD_PAGE_RANKING_MS_GRAND_TYPE'=> env('SD_PAGE_RANKING_MS_GRAND_TYPE','not found in .env file'),
@@ -281,7 +284,7 @@ return [
     'SD_PAGE_RANKING_MS_UPDATE' =>env('SD_PAGE_RANKING_MS_UPDATE','not found in .env file'),
     'SD_PAGE_RANKING_MS_DELETE_URL'=> env('SD_PAGE_RANKING_MS_DELETE_URL','not found in .env file'),
 
-    // Social Ranking api from .env
+    // Social Ranking api from .env 
     'SD_SOCIAL_RANKING_MS_BASE_URL'=> env('SD_SOCIAL_RANKING_MS_BASE_URL','not found in .env file'),
     'SD_SOCIAL_RANKING_MS_OAUTH_TOKEN_URL'=> env('SD_SOCIAL_RANKING_MS_OAUTH_TOKEN_URL','not found in .env file'),
     'SD_SOCIAL_RANKING_MS_GRAND_TYPE'=> env('SD_SOCIAL_RANKING_MS_GRAND_TYPE','not found in .env file'),
@@ -305,7 +308,7 @@ return [
     'SD_WEBSITE_ACCESS_MS_UPDATE' =>env('SD_WEBSITE_ACCESS_MS_UPDATE','not found in .env file'),
     'SD_WEBSITE_ACCESS_MS_DELETE_URL'=> env('SD_WEBSITE_ACCESS_MS_DELETE_URL','not found in .env file'),
     'SD_WEBSITE_ACCESS_MS_DECRYPT_ENCRYPT'=> env('SD_WEBSITE_ACCESS_MS_DECRYPT_ENCRYPT','not found in .env file'),
-
+      
     // email access api from .env
     'SD_EMAIL_MS_BASE_URL' => env('SD_EMAIL_MS_BASE_URL','not found in .env'),
     'SD_EMAIL_MS_OAUTH_TOKEN_URL' => env('SD_EMAIL_MS_OAUTH_TOKEN_URL','not found in .env'),
@@ -318,7 +321,7 @@ return [
     'SD_EMAIL_MS_EDIT' => env('SD_EMAIL_MS_EDIT','not found in .env'),
     'SD_EMAIL_MS_UPDATE' => env('SD_EMAIL_MS_UPDATE','not found in .env'),
 
-    // phone number api from .env
+    // phone number api from .env 
     'SD_PHONE_NUMBER_MS_BASE_URL' => env('SD_PHONE_NUMBER_MS_BASE_URL','not found in .env'),
     'SD_PHONE_NUMBER_MS_OAUTH_TOKEN_URL' => env('SD_PHONE_NUMBER_MS_OAUTH_TOKEN_URL','not found in .env'),
     'SD_PHONE_NUMBER_MS_GRAND_TYPE' => env('SD_PHONE_NUMBER_MS_GRAND_TYPE','not found in .env'),
@@ -342,7 +345,7 @@ return [
     'SD_TASK_BOARD_MS_UPDATE'=> env('SD_TASK_BOARD_MS_UPDATE','not found in .env file'),
     'SD_TASK_BOARD_MS_DELETE_URL' =>env('SD_TASK_BOARD_MS_DELETE_URL','not found in .env file'),
 
-    // Interval Task Api from .env
+    // Interval Task Api from .env 
     'SD_INTERVAL_TASK_MS_BASE_URL' => env('SD_INTERVAL_TASK_MS_BASE_URL','not found in .env'),
     'SD_INTERVAL_TASK_MS_OAUTH_TOKEN_URL' => env('SD_INTERVAL_TASK_MS_OAUTH_TOKEN_URL','not found in .env'),
     'SD_INTERVAL_TASK_MS_GRAND_TYPE' => env('SD_INTERVAL_TASK_MS_GRAND_TYPE','not found in .env'),
@@ -367,7 +370,7 @@ return [
     'SD_SUPER_ADMIN_UPDATE' =>env('SD_SUPER_ADMIN_UPDATE','not found in .env file'),
     'SD_SUPER_ADMIN_DELETE_URL'=> env('SD_SUPER_ADMIN_DELETE_URL','not found in .env file'),
     ########################################################################################################
-
+   
    ## wizard-projects
    'SD_WIZARD_PROJECT_MS_BASE_URL'=> env('SD_WIZARD_PROJECT_MS_BASE_URL','not found in .env file'),
    'SD_WIZARD_PROJECT_MS_OAUTH_TOKEN_URL'=> env('SD_WIZARD_PROJECT_MS_OAUTH_TOKEN_URL','not found in .env file'),

@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->enum('status', array('1','0','-1'))->default('0');
             $table->string('file_pic')->nullable();
             $table->string('password');
-            
             $table->rememberToken();
             $table->timestamps();
         });

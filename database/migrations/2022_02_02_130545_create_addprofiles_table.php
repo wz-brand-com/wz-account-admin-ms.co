@@ -15,28 +15,24 @@ class CreateAddprofilesTable extends Migration
     {
         Schema::create('addprofiles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id')->nullable();
-            $table->string('user_name')->nullable();
-            $table->string('user_email')->nullable();
-            $table->string('slug_id')->nullable();
-            $table->string('slugname')->nullable();
-            $table->string('u_org_role_id')->nullable();
-            $table->string('country_id')->nullable();
-            $table->string('state_id')->nullable();
-            $table->string('city_id')->nullable();
-            $table->string('mobile')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('youtube')->nullable();
-            $table->string('wordpress')->nullable();
-            $table->string('tumblr')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('quora')->nullable();
-            $table->string('pinterest')->nullable();
-            $table->string('reddit')->nullable();
-            $table->string('koo')->nullable();
-            $table->string('scoopit')->nullable();
-            $table->string('slashdot')->nullable();
+            $table->string('user_name');
+            $table->string('admin_id');
+            $table->string('admin_email');
+            $table->string('slug_id');
+            $table->string('slugname');
+            $table->string('u_org_role_id');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('youtube');
+            $table->string('wordpress');
+            $table->string('tumblr');
+            $table->string('instagram');
+            $table->string('quora');
+            $table->string('pinterest');
+            $table->string('reddit');
+            $table->string('koo');
+            $table->string('scoopit');
+            $table->string('slashdot');
             $table->timestamps();
         });
     }

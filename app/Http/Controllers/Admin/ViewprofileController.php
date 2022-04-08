@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Hash;
+use App\City;
+use App\User;
+use App\State;
+use Validator;
+use App\Country;
+use App\Addprofile;
+use App\Organisation;
+use App\Usersorganization;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Mail\PasswordChangeSendMail;
-use App\Organisation;
-use App\Addprofile;
-use App\User;
-use App\Usersorganization;
-use Auth;
-use Hash;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use Validator;
-use DB;
-use App\City;
-use App\State;
-use App\Country;
+use App\Http\Controllers\Api\OrganisationApiController;
 
 class ViewprofileController extends Controller
 {
@@ -29,8 +30,33 @@ class ViewprofileController extends Controller
         $org_id = $org['id'];
         $slug_id = $org['id'];
         $org_users = Usersorganization::where('u_org_user_id', $user_id)->where('u_org_organization_id', $org_id)->first();
+      
+
+        // testing open
+        // $a_user_api_bearer_token = $this->getProjectAccessToken();
+        Log::info('we are in project controller slugwithdashboard function'.$org_slug);
+
+        $findingSlugName = $org_slug;
+        $apicontroller = new OrganisationApiController();
+        Log::info(' we are in project controller OrganisationApiController:');
+        $userOrgId = $apicontroller->getSlugIdOrganisation($findingSlugName,$user_id);
+        Log::info('we are in  project controller slugwithdashboard 03-02-2022 function :');
+        $getting_roll_id = $userOrgId['slug_based_rollId'];
+        $block_or_blocked = $userOrgId['slug_based_status'];
+        $slug_id = $userOrgId['slug_based_u_org_organization_id'];
+        Log::info('we are finding project controller roll id : '.$getting_roll_id);
+        Log::info('we are fetching project controller status : '.$block_or_blocked);
+
+        $user_id = Auth::user()->id;
+        $user_account_block = User::where('id',$user_id)->first();
+        $block_user = $user_account_block['status'];
+        // testing close
+
         $profile_user_url = Addprofile::where('user_id',$user_id)->first();
         Log::info('we are getting '.$profile_user_url);
+
+
+
 
         $profile_getting = Addprofile::where('user_id',$user_id)->first();
 
@@ -38,7 +64,7 @@ class ViewprofileController extends Controller
         Log::info('now get country_id ka value'.$country_id);
         $country = Country::where('country_id',$country_id)->first();
         $get_country_name = $country['country_name'];
-        Log::info(' getting country name '.$get_country_name);
+        Log::info(' getting country name '.$get_country_name);  
 
         $state_id = $profile_getting['state_id'];
         $state = State::where('state_id',$state_id)->first();
@@ -51,7 +77,7 @@ class ViewprofileController extends Controller
         Log::info(' getting city name '.$get_city_name);
 
         // ################# if condition apply for checking if organization has been blocked not allow to access dashboard
-        $block_or_blocked = $org_users['status'];
+        // $block_or_blocked = $org_users['status'];
         $user_account_block = User::where('id', $user_id)->first();
         $block_user = $user_account_block['status'];
 
@@ -70,7 +96,7 @@ class ViewprofileController extends Controller
             // ##################### if condition apply for checking if organization has been blocked not allow to access dashboard
 
             // open condition open
-            $getting_roll_id = $org_users->u_org_role_id;
+            // $getting_roll_id = $org_users->u_org_role_id;
             if ($getting_roll_id == 1) {
                 return view('pages.viewprofile', compact('users', 'org_slug', 'getting_roll_id', 'slug_id','profile_user_url','user_id','get_country_name','get_state_name','get_city_name'));
             } // first if close
@@ -353,14 +379,16 @@ class ViewprofileController extends Controller
 
 
      public function userProfileDashboard(){
-
-         $data = DB::table('addprofiles')
+    
+       $data = DB::table('addprofiles')
         ->leftJoin('countries','addprofiles.country_id', '=','countries.country_id')
         ->leftJoin('states','addprofiles.state_id', '=','states.state_id')
         ->leftJoin('cities','addprofiles.city_id', '=','cities.city_id')
-        ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name')
+        ->leftJoin('users','addprofiles.user_id', '=','users.id')
+        ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name','users.name','users.email','users.file_pic')
         ->orderBy('id', 'desc')->get();
          return view('publicview',compact('data'));
+
     }
 
 
@@ -410,7 +438,8 @@ class ViewprofileController extends Controller
                      ->leftJoin('countries','addprofiles.country_id', '=','countries.country_id')
                      ->leftJoin('states','addprofiles.state_id', '=','states.state_id')
                      ->leftJoin('cities','addprofiles.city_id', '=','cities.city_id')
-                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name')
+                     ->leftJoin('users','addprofiles.user_id', '=','users.id')
+                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name','users.file_pic')
                      ->where('addprofiles.country_id', $country_id)
                      ->orderBy('id', 'desc')->get();
                      // Log::info($data .'$data fetchjobsdata ka country data hai');
@@ -419,7 +448,8 @@ class ViewprofileController extends Controller
                      ->leftJoin('countries','addprofiles.country_id', '=','countries.country_id')
                      ->leftJoin('states','addprofiles.state_id', '=','states.state_id')
                      ->leftJoin('cities','addprofiles.city_id', '=','cities.city_id')
-                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name')
+                     ->leftJoin('users','addprofiles.user_id', '=','users.id')
+                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name','users.file_pic')
                      ->where('addprofiles.state_id', $state_id)
                      ->orderBy('id', 'desc')->get();
                      // Log::info($data .'$data fetchjobsdata ka state data hai');
@@ -428,7 +458,8 @@ class ViewprofileController extends Controller
                      ->leftJoin('countries','addprofiles.country_id', '=','countries.country_id')
                      ->leftJoin('states','addprofiles.state_id', '=','states.state_id')
                      ->leftJoin('cities','addprofiles.city_id', '=','cities.city_id')
-                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name')
+                     ->leftJoin('users','addprofiles.user_id', '=','users.id')
+                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name','users.file_pic')
                      ->where('addprofiles.city_id', $city_id)
                      ->orderBy('id', 'desc')->get();
                      // Log::info($data .'$data fetchjobsdata ka city data hai');
@@ -437,7 +468,8 @@ class ViewprofileController extends Controller
                      ->leftJoin('countries','addprofiles.country_id', '=','countries.country_id')
                      ->leftJoin('states','addprofiles.state_id', '=','states.state_id')
                      ->leftJoin('cities','addprofiles.city_id', '=','cities.city_id')
-                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name')
+                     ->leftJoin('users','addprofiles.user_id', '=','users.id')
+                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name','users.file_pic')
                      ->where('addprofiles.id', 'like', '%'.$search.'%')
                      ->orWhere('addprofiles.user_name', 'like', '%'.$search.'%')
                      ->orWhere('countries.country_name', 'like', '%'.$search.'%')
@@ -450,7 +482,8 @@ class ViewprofileController extends Controller
                      ->leftJoin('countries','addprofiles.country_id', '=','countries.country_id')
                      ->leftJoin('states','addprofiles.state_id', '=','states.state_id')
                      ->leftJoin('cities','addprofiles.city_id', '=','cities.city_id')
-                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name')
+                     ->leftJoin('users','addprofiles.user_id', '=','users.id')
+                     ->select('addprofiles.*','countries.country_name','states.state_name','cities.city_name','users.file_pic')
                     ->orderBy('id', 'desc')->get();
                     Log::info('$data fetchjobsdata ka last addprofiles  data hai');
                 }

@@ -2,12 +2,17 @@
 @section('title','Account Admin')
 
 @section('content')
+<input type="hidden" id="a_u_a_b_t" value="{!! $a_user_api_bearer_token !!}">
+<script type="text/javascript">
+    localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
+
+</script>
 <!-- hidden Auth email and id for calling in json index -->
 <input type="hidden" value="{{ Auth::user()->id }}" name="admin_id" id="auth_id" />
 <input type="hidden" value="{{ Auth::user()->email }}" name="admin_email" id="auth_email" />
 <!-- select keyword html tag input open -->
 <link href="{{ asset('css/tagify.css') }}" rel="stylesheet">
-<script src="{{ asset('js/jQuery.tagify.min.js') }}"></script>
+<script src="{{ asset('js/jQuery.tagify.min.js') }}"></script>    
 <script src="{{ asset('js/tagify.min.js') }}"></script>
 <style>
     .custom-tag {
@@ -80,14 +85,11 @@ color:#000;
                                                                 Select Project </option>
                                                             @foreach(App\Http\Controllers\Api\ProjectApiController::getvalueall($slug_id)
                                                             as $project)
-
-                                                             {{-- @foreach(App\Http\Controllers\Api\WizardProjectApiController::getvalueall($slug_id) as $project) --}}
-
                                                             <option name="{{$project['id']}}" value="{{$project['project_name']}}">
                                                                 {{$project['project_name']}}</option>
                                                             @endforeach
 
-                                                        </select>
+                                                        </select> 
                                                     </div>
 
                                                     <div class="form-group">
@@ -107,10 +109,10 @@ color:#000;
                                                                 Keyword </option>
                                                         </select>
                                                     </div>
-
                                                     <div class="form-group">
                                                         <label class="control-label">Severity</label>
-                                                        <select name="tasktype" id="severity" class="severity w-100 p-2">
+                                                        <select class="form-control custom-select" name="severity"
+                                                            id="severity">
                                                             <option value="">Select Severity</option>
                                                             <option value="Most Important">Most Important</option>
                                                             <option value="Moderately Important">Moderately Important
@@ -120,8 +122,19 @@ color:#000;
                                                         </select>
                                                     </div>
 
+                                                    <div class="form-group">
+                                                        <label class="control-label">Task Type</label>
+                                                    
 
+                                                        <select name="tasktype" id="taskTypeValue" class="w-100 p-2">
+                                                            <option value="default" class="form-controll text-dark">Select Task Type </option>
+                                                           
+                                                          
+                                                        </select>
 
+                                                      
+
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-6">
 
@@ -135,15 +148,11 @@ color:#000;
                                                     <div class="form-group">
 
                                                     <label class="control-label">Task Assign To</label>
-                                                    <select name="user" id="user" class="w-100 p-2">
-                                                        <option value="" class="form-controll text-dark">Select Email </option>
-                                                          <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option>
-                                                            @foreach($task_board_user_manager_assign as $tsk_manger)
-                                                                @if(Auth::user()->email !== $tsk_manger['u_org_user_email'])
-                                                                    <option  value="{{$tsk_manger['u_org_user_email']}}" name="{{$tsk_manger['u_org_user_id']}}" >{{$tsk_manger['u_org_user_email']}}</option>
-                                                                @endif
-                                                             @endforeach
-                                                    </select>
+                                                        <select name="user" id="project_manager" class="w-100 p-2">
+                                                            <option value=""  class="form-controll text-dark"> Select Email </option>
+                                                            <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option>
+                                                            
+                                                        </select>
                                                     </div>
                                                     <div class="form-group" id="hidestatus">
                                                         <label class="control-label">Task Status</label>
@@ -157,23 +166,13 @@ color:#000;
                                                         </select>
                                                     </div>
 
-                                                    <div class="form-group" style="margin-bottom: -1px;">
+                                                    <div class="form-group">
                                                         <label class="control-label">Attachment File</label>
                                                         <input type="file" id="document_file"
                                                             class="form-control" name="document" accept=".pdf, .jpeg, .jpg, .png" >
                                                              <span class="text-danger">Upload file (.pdf, .jpeg, .jpg, .png)</span>
                                                              <div id="document_show"></div>
                                                              <!-- <input type="hidden" id="file_document_show" name="file_document_show"> -->
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label">Task Type</label>
-                                                        <select name="tasktype" id="tasktype" class="w-100 p-2">
-                                                            <option value="default" class="form-control text-dark">
-                                                                Select Task Type </option>
-                                                            @foreach($taskTypeFromSiteAdmin as $task_typ)
-                                                        <option  value="{{$task_typ['tasktype']}}" name="{{$task_typ['id']}}" >{{$task_typ['tasktype']}}</option>
-                                                        @endforeach
-                                                        </select>
                                                     </div>
 
                                                 </div>
@@ -316,14 +315,14 @@ color:#000;
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                         <span><b>User: </b></span>
                                         <span id="user_name"></span>
-                                    </div>
+                                    </div>    
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                         <span><b>Weburl: </b></span>
                                         <span id="weburl_name"></span>
                                     </div>
                                 </div>
                                 <hr>
-
+                                
                                 <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                             <span><b>Tasktype: </b></span>
@@ -340,15 +339,15 @@ color:#000;
                                             <span><b>Describtion: </b></span>
                                             <span id="description_name"></span>
                                         </div>
-
+                                    
                                 </div>
                                 <hr>
 
                                 </div>
                             </div>
-
+                            
                             <!-- Show Modal view Card End -->
-
+                            
                         </div>
                     </div>
                 </div>
@@ -367,6 +366,70 @@ color:#000;
 <script>
     $(document).ready(function () {
         // image load
+
+           
+               // manger will be call on load page open
+               userAuthId = $('#admin_id').val();
+        console.log('what is coming in userAuthId : ' +userAuthId);
+        organisation_id = $('#u_org_organization_id').val();
+        console.log('organisation id ka ' + organisation_id);
+        $.ajax({
+        type: 'get',
+        url: "{{url('api/v1/j/invitedManagerUserGetting')}}/" + userAuthId+'/'+organisation_id,
+        dataType: "json",
+        async:false,
+        // dataSrc: 'data',
+        // "beforeSend": function (xhr) {
+        //             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+        //                 'a_u_a_b_t'));
+        //         },
+
+        headers: {
+                        "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
+                    },
+        
+        success: function(data) {
+            console.log('success main mamager id value a rha hai ki nahi'+data);
+            var p_name = ('#project_manager');
+            // $(p_name).empty();
+
+            $.each(data, function (i, link) {
+                            $('#project_manager').append('<option name="' + link.u_org_user_email +'" value="' + link.u_org_user_email + '">' + link.u_org_user_email +'</option>'); 
+                        });
+
+        }
+
+    });
+
+    
+
+    // manger will be call on load page close
+
+     // ======================== task type is calling in drop dwon open
+    //  slug_id = $('#admin_id').val();
+    //     console.log('task type auth is cooming' + slug_id);
+    //     $.ajax({
+    //         type: 'get',
+    //         url: "{{ url('api/v1/j/siteadmin_tasktype/gettasktype') }}/" + slug_id,
+    //         dataType: "json",
+    //         async: false,
+    //         dataSrc: 'data',
+    //         "beforeSend": function (xhr) {
+    //             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+    //                 'a_u_a_b_t'));
+    //         },
+    //         success: function (data) {
+    //             console.log('success task type value is coming from site admin' + data);
+    //             var p_name = ('#taskTypeValue');
+    //             $.each(data, function (i, link) {
+    //             $('#taskTypeValue').append('<option name="' + link.tasktype + '" value="' + link.tasktype +'">' + link.tasktype + '</option>');
+    //             });
+    //         }
+    //     });
+    // ======================== task type is calling in drop dwon close
+
+
+
 
         // onchange function for url get via project name
         $('#project_name').on('change', function () {
@@ -401,21 +464,23 @@ color:#000;
                         // $.each(response, function (i, link) {
                         //     $('#url').append('<option name="' + link.id +'"value="'+link.url+'">'+link.url+'</option>');
                         // });
-
+                        
                        // this url is comming from add url ms concatinate close
                         var wiz_url = response.getting_wizproject_url;
-                        console.log('wizard ka url le kr aa gaya' + wiz_url);
+                        console.log('wizard ka url le kr aa gaya' + wiz_url);  
                         $('#url').empty();
-                        $('#url').append('<option> Select Url </option>');
+                        $('#url').append('<option> Select Url </option>');  
                         console.log(response);
                         $.each(response.data, function (i, link) {
-                            $('#url').append('<option name="' + link.id +'" value="' + link.url + '">' + link.url +'</option>');
+                            $('#url').append('<option name="' + link.id +'" value="' + link.url + '">' + link.url +'</option>'); 
                         });
                         // this url is comming from add url ms concatinate close
 
                         // wizard url open
+                        // $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
+                        // '</option>'
+                        // );
                         $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
-                        '</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.linkedIn+'">'+wiz_url.data.linkedIn+'</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.youtube+'">'+wiz_url.data.youtube+'</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.twitter+'">'+wiz_url.data.twitter+'</option>'
@@ -460,7 +525,7 @@ color:#000;
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.instagram+'">'+wiz_url.data.instagram+'</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.pinterest+'">'+wiz_url.data.pinterest+'</option>'
                         );
-                        // wizard url close
+                        // wizard url close  
                     },
                     error: function (errorResponse) {
                         console.log(errorResponse);
@@ -594,16 +659,16 @@ color:#000;
                 {
                     // data: 'title'
                     data: null,
-                    render: function(data, type, row)
+                    render: function(data, type, row) 
                     {
-                        return  data['title'].substr(0, 6)
+                        return  data['title'].substr(0, 6) 
                     },
                 },
                 {
                     // data: 'project_name'
 
                     data: null,
-                    render: function(data, type, row)
+                    render: function(data, type, row) 
                     {
                         // if(data.count < 30){
                         //     return  data['project_name']
@@ -772,7 +837,7 @@ color:#000;
             //passing project id in hidden for submitting projec_id into databse
             var project_id = $("#project_name option:selected").attr("name");
             $('#project_id').val(project_id);
-
+         
             // data add working on submit button
             if ($('#action').val() == 'Add') {
                 console.log('add button click ho rha ha');
@@ -929,14 +994,6 @@ color:#000;
                 $('#file_document_show').val(documnet_files);
                 // taking file name close
 
-
-                    // $('#document_show').append('<img width="250px;" height="150px;" src="http://wz-tasks-board-ms/storage/file/'+documnet_files+'">');
-
-
-                   //  var ajay_slecect_file = $('#document_show').attr("src", data);
-                    //  var ajay_slecect = $('#document_sel_img').val(ajay_slecect_file);
-
-                    // console.log('image show kr raha hai sle' + documnet_files);
                 //    image will be show on edit event close
                     $('#user_hidden_id').val(html.data.id);
 

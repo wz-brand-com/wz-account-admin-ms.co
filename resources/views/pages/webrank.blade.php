@@ -144,6 +144,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                                 </div>
                                             </div>
                                             <!--  Global  and US rank end -->
+
                                             <!-- india and backlinks -->
                                             <div class="row">
                                                 <div class="col-md-12 col-lg-12 col-sm-6">
@@ -154,7 +155,9 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                                             <span id="validation_refr" class="text-danger"></span>
                                                     </div>
                                                 </div>
+
                                             </div>
+
                                             <!-- Sending admin_id and admin_email in hidden input box -->
                                             <input type="hidden" value="{{ Auth::user()->id }}" name="admin_id"
                                                 id="admin_id" />
@@ -169,6 +172,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                             <input type="hidden" value="{{$slug_id}}" name="u_org_organization_id" id="u_org_organization_id">
                                             <input type="hidden" value="{{$getting_roll_id}}" name="u_org_role_id" id="u_org_role_id">
                                         </div>
+
                                     <!-- <br /> -->
                                     <div class="form-group text-center">
                                         <input type="hidden" name="action" id="action" />
@@ -191,8 +195,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                 </div>
                                 <div class="modal-body">
                                     <h4 class="text-center" style="margin:0; color:red;">Are you sure you want to remove
-                                        this URL?
-                                    </h4>
+                                        this URL?</h4>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" name="ok_button" id="ok_button"

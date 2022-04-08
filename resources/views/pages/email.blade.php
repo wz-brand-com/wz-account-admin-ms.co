@@ -21,8 +21,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                         <div class="row">
                             <div class="col-md-8">
                                 <button type="button" name="create_record" id="create_record"
-                                    class="btn btn-primary ">Add New Email
-                                </button>
+                                    class="btn btn-primary ">Add New Email</button>
                             </div>
                         </div>
                                     

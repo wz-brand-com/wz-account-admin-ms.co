@@ -122,7 +122,11 @@
                                                             <option value="default" class="form-control">
                                                                 Select Project </option>
 
-                                                        
+                                                                @foreach(App\Http\Controllers\Api\ProjectApiController::getvalueall($slug_id)
+                                                            as $project)
+                                                            <option name="{{$project['id']}}" value="{{$project['project_name']}}">
+                                                                {{$project['project_name']}}</option>
+                                                            @endforeach
 
                                                         </select>
 
@@ -159,10 +163,10 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Manage By</label>
 
-                                                        <select name="maintenance_engineer" id="maintenance_engineer" class="form-control">
+                                                        <select name="maintenance_engineer" id="project_manager" class="form-control">
                                                             <option value="default" class="form-control text-dark">Select Email </option>
 
-
+                                                            
                                                             <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option>
 
                                                         </select>
@@ -287,7 +291,7 @@
                                 </div>
                                 <hr>
                                 </div>
-                                {{-- <span class="float-left"><a href="" class="btn btn-warning ml-2" data-toggle="modal" id="encrypt_add" data-target="#exampleModal">Decrypt data</a></span> --}}
+                                <!-- {{-- <span class="float-left"><a href="" class="btn btn-warning ml-2" data-toggle="modal" id="encrypt_add" data-target="#exampleModal">Decrypt data</a></span> --}} -->
                                 <div class="col-2">
                                     <span class="float-left"><a href="" class="btn btn-warning ml-2" data-toggle="modal" id="encrypt_add" data-target="#exampleModal">Decrypt data</a></span>
                                 </div>
@@ -395,6 +399,38 @@ $(document).ready(function() {
  window.addEventListener("load", function() {
    $(".loader").delay(500).fadeOut("slow");
 });
+
+ // manger will be call on load page open
+ userAuthId = $('#admin_id').val();
+        console.log('what is coming in userAuthId : ' +userAuthId);
+        organisation_id = $('#u_org_organization_id').val();
+        console.log('organisation id ka ' + organisation_id);
+        $.ajax({
+        type: 'get',
+        url: "{{url('api/v1/j/invitedManagerUserGetting')}}/" + userAuthId+'/'+organisation_id,
+        dataType: "json",
+        async:false,
+        dataSrc: 'data',
+        "beforeSend": function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+                        'a_u_a_b_t'));
+                },
+        
+        success: function(data) {
+            console.log('success main mamager id value a rha hai ki nahi'+data);
+            var p_name = ('#project_manager');
+            // $(p_name).empty();
+
+            $.each(data, function (i, link) {
+                            $('#project_manager').append('<option name="' + link.u_org_user_email +'" value="' + link.u_org_user_email + '">' + link.u_org_user_email +'</option>'); 
+                        });
+
+        }
+
+    });
+
+    // manger will be call on load page close
+
     console.log('trying to call api');
     slug_id = $('#u_org_organization_id').val();
     // user_id = $('#user_id').val();

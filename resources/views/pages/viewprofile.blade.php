@@ -238,7 +238,9 @@
                                                     class="profile_class_edit btn btn-outline-success btn-sm ">Update
                                                     Avatar
                                                 </button>
+
                                                 <br><br>
+
                                                 @endif
                                                 <!-- update profile update open -->
                                                 <div id="user_pic_formModal" class="modal fade" role="dialog">
@@ -637,7 +639,7 @@
                                                 <button class="btn btn-success edit_add_profile " id="edit_add_profile"
                                                     value="{{ Auth::user()->id }}"> Edit profile</button>
                                                 @else
-                                                <button class="btn btn-secondary fa fa-ban"> Edit profile</button>
+                                                <button class="btn btn-secondary fa fa-ban" style="display: none;"> Edit profile</button>
                                                 @endif
 
 

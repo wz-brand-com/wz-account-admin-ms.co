@@ -85,9 +85,6 @@ color:#000;
                                                                 Select Project </option>
                                                             @foreach(App\Http\Controllers\Api\ProjectApiController::getvalueall($slug_id)
                                                             as $project)
-
-                                                             {{-- @foreach(App\Http\Controllers\Api\WizardProjectApiController::getvalueall($slug_id) as $project) --}}
-
                                                             <option name="{{$project['id']}}" value="{{$project['project_name']}}">
                                                                 {{$project['project_name']}}</option>
                                                             @endforeach
@@ -127,11 +124,12 @@ color:#000;
 
                                                     <div class="form-group">
                                                         <label class="control-label">Task Type</label>
-                                                        <select name="tasktype" id="tasktype" class="w-100 p-2">
-                                                            <option value="default" class="form-control text-dark">
-                                                                Select Task Type </option>
-                                                               
-                                                               
+                                                    
+
+                                                        <select name="tasktype" id="taskTypeValue" class="w-100 p-2">
+                                                            <option value="default" class="form-controll text-dark">Select Task Type </option>
+                                                           
+                                                          
                                                         </select>
 
                                                       
@@ -150,7 +148,7 @@ color:#000;
                                                     <div class="form-group">
 
                                                     <label class="control-label">Task Assign To</label>
-                                                        <select name="user" id="user" class="w-100 p-2">
+                                                        <select name="user" id="project_manager" class="w-100 p-2">
                                                             <option value=""  class="form-controll text-dark"> Select Email </option>
                                                             <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option>
                                                             
@@ -369,6 +367,70 @@ color:#000;
     $(document).ready(function () {
         // image load
 
+           
+               // manger will be call on load page open
+               userAuthId = $('#admin_id').val();
+        console.log('what is coming in userAuthId : ' +userAuthId);
+        organisation_id = $('#u_org_organization_id').val();
+        console.log('organisation id ka ' + organisation_id);
+        $.ajax({
+        type: 'get',
+        url: "{{url('api/v1/j/invitedManagerUserGetting')}}/" + userAuthId+'/'+organisation_id,
+        dataType: "json",
+        async:false,
+        // dataSrc: 'data',
+        // "beforeSend": function (xhr) {
+        //             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+        //                 'a_u_a_b_t'));
+        //         },
+
+        headers: {
+                        "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
+                    },
+        
+        success: function(data) {
+            console.log('success main mamager id value a rha hai ki nahi'+data);
+            var p_name = ('#project_manager');
+            // $(p_name).empty();
+
+            $.each(data, function (i, link) {
+                            $('#project_manager').append('<option name="' + link.u_org_user_email +'" value="' + link.u_org_user_email + '">' + link.u_org_user_email +'</option>'); 
+                        });
+
+        }
+
+    });
+
+    
+
+    // manger will be call on load page close
+
+     // ======================== task type is calling in drop dwon open
+    //  slug_id = $('#admin_id').val();
+    //     console.log('task type auth is cooming' + slug_id);
+    //     $.ajax({
+    //         type: 'get',
+    //         url: "{{ url('api/v1/j/siteadmin_tasktype/gettasktype') }}/" + slug_id,
+    //         dataType: "json",
+    //         async: false,
+    //         dataSrc: 'data',
+    //         "beforeSend": function (xhr) {
+    //             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+    //                 'a_u_a_b_t'));
+    //         },
+    //         success: function (data) {
+    //             console.log('success task type value is coming from site admin' + data);
+    //             var p_name = ('#taskTypeValue');
+    //             $.each(data, function (i, link) {
+    //             $('#taskTypeValue').append('<option name="' + link.tasktype + '" value="' + link.tasktype +'">' + link.tasktype + '</option>');
+    //             });
+    //         }
+    //     });
+    // ======================== task type is calling in drop dwon close
+
+
+
+
         // onchange function for url get via project name
         $('#project_name').on('change', function () {
             $('#keyword-select').empty();
@@ -415,8 +477,10 @@ color:#000;
                         // this url is comming from add url ms concatinate close
 
                         // wizard url open
+                        // $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
+                        // '</option>'
+                        // );
                         $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
-                        '</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.linkedIn+'">'+wiz_url.data.linkedIn+'</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.youtube+'">'+wiz_url.data.youtube+'</option>'
                         +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.twitter+'">'+wiz_url.data.twitter+'</option>'
@@ -930,14 +994,6 @@ color:#000;
                 $('#file_document_show').val(documnet_files);
                 // taking file name close
 
-
-                    // $('#document_show').append('<img width="250px;" height="150px;" src="http://wz-tasks-board-ms/storage/file/'+documnet_files+'">');
-
-
-                   //  var ajay_slecect_file = $('#document_show').attr("src", data);
-                    //  var ajay_slecect = $('#document_sel_img').val(ajay_slecect_file); 
-
-                    // console.log('image show kr raha hai sle' + documnet_files);
                 //    image will be show on edit event close
                     $('#user_hidden_id').val(html.data.id);
 

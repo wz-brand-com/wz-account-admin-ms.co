@@ -77,7 +77,7 @@ class HomeController extends Controller
                 }
                 $org_user_list = Organisation::whereIn('id', $myOrId)->orderBy('id', 'DESC')->paginate(500);
                 $a_user_api_bearer_token = $this->getOrganisationAccessToken();
-                return view('admin/orgs', compact('org_user_list','a_user_api_bearer_token'));
+                return view('admin/organisation', compact('org_user_list','a_user_api_bearer_token'));
             } else {
                 Log::info('we are in else condition of this function addoragnization');
                 return view('admin/remove-orgs');
@@ -86,13 +86,14 @@ class HomeController extends Controller
 
     }
 
-    // after choose organization then continue with rolebased display dashbboard open
+    // after choose organization then continue with role based display dashbboard open
     public function slugwithdashboard($org_slug)
     {
+        $authId = Auth::user()->id;
         Log::info('slugwith dashboard' .$org_slug);
         $findingSlugName = $org_slug;
         $apicontroller = new OrganisationApiController();
-        $userOrgId = $apicontroller->getSlugIdOrganisation($findingSlugName);
+        $userOrgId = $apicontroller->getSlugIdOrganisation($findingSlugName,$authId);
         $getting_roll_id = $userOrgId['slug_based_rollId'];
         Log::info('user roll id'.print_r($getting_roll_id,true));
         $block_or_blocked = $userOrgId['slug_based_status'];
@@ -121,15 +122,15 @@ class HomeController extends Controller
         $getKeywordCount = $getkeyword->getKeyword($id);
         $get_keyword_count = $getKeywordCount['keywordCount'];
            
-        $user_id = Auth::user()->id;
-        $user_account_block = User::where('id',$user_id)->first();
+        $login_user_id = Auth::user()->id;
+        $user_account_block = User::where('id',$login_user_id)->first();
         $block_user = $user_account_block['status'];
 
         if($block_or_blocked == 1){
             Log::info('organizatio block ho gaya hai');
             return view('admin/block-organization'); 
         }
-        if($block_user == 1){
+        if($login_user_id === 1){
             Log::info('user account block ho gaya hai');
             return view('admin/status-blocked'); 
         }
@@ -156,19 +157,6 @@ class HomeController extends Controller
     }
     // after choose organization then continue with rolebased display dashbboard open
 
-    public function edit_orgs($id)
-    {
-        $find_auth_based = Auth::user()->id;
-        $validate_orgs = Organisation::where('id', $id)->where('org_user_id', $find_auth_based)->first();
-        if ($validate_orgs == null) {
-            Log::info('validate kerne pe value kiya aa rha hai');
-            return view('admin/prohibited-orgs-edit', compact('validate_orgs'));
-        } else {
-            Log::info('validate kerne pe value kiya aa rha hai');
-            return view('admin/orgs-edit', compact('validate_orgs'));
-        }
-
-    }
 
     public function update_orgs(Request $request, $id)
     {

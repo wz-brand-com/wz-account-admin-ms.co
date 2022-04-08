@@ -1,6 +1,6 @@
 @extends('page-layouts.index')
 @section('content')
-<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <div class="jumbotron1 jumbotron-fluid">
     <div class="container">
         <div class="row login_card">
@@ -14,6 +14,7 @@
                         <!-- <div class="login_logo_container">
                                 <img src="assets/images/wizbrand-logo.png" width="50px;" class="login_logo" alt="Logo"> </div>
                             </div> -->
+
                         <!-- header image of wizbrand close -->
                         <!-- login  input open -->
                         <div class="d-flex justify-content-center shadow">
@@ -55,14 +56,16 @@
                                 </div>
                                 <!-- for custome validation C:\xampp\htdocs\dmin\vendor\laravel\framework\src\Illuminate\Foundation\Auth\AuthenticatesUsers.php -->
 
-                                <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                                <div
+                                    class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                                     {!! app('captcha')->display() !!}
-         
-                                    @if ($errors->has('g-recaptcha-response'))
-                                        <span class="help-block">
-                                            <strong class="tst4 btn btn-danger">{{ $errors->first('g-recaptcha-response') }}</strong>
-                                        </span>
-                                   @endif
+
+                                    @if($errors->has('g-recaptcha-response'))
+                                        <p>
+                                            <span class="help-block tst4">{{ $errors->first('g-recaptcha-response') }}</span>
+                                        </p>
+                                    @endif
+                                </div>
                                 <div class="col-lg-12">
                                     <div class="d-flex justify-content-center login_container">
                                         <button type="submit" name="button"

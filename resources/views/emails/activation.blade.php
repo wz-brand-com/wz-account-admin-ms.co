@@ -50,7 +50,6 @@
         div[style*="margin: 16px 0;"] {
             margin: 0 !important;
         }
-
     </style>
 
 <body style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee;" bgcolor="#eeeeee">
@@ -86,9 +85,9 @@
                                 style="max-width:600px;">
 
                                 <tr>
-                                <td align="left"
+                                    <td align="left"
                                         style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 10px;">
-                                        
+
                                         <p>
                                             Hi {{ $without_orgnization_user['name'] }}, <b></b> </p>
                                         <p>
@@ -102,6 +101,12 @@
                                                     style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; border-radius: 3px; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); color: #FFF; display: inline-block; text-decoration: none; -webkit-text-size-adjust: none; background-color: #3097D1; border-top: 10px solid #3097D1; border-right: 18px solid #3097D1; border-bottom: 10px solid #3097D1; border-left: 18px solid #3097D1;">
                                                     Activate
                                                 </a>
+                                                <br>
+                                                <br>
+                                                <br><br>
+
+
+
                                             </p>
                                         </div>
                                         <br>
@@ -118,10 +123,10 @@
                             </table>
                         </td>
                     </tr>
-                    
+
                 </table>
             </td>
-        </tr>      
+        </tr>
     </table>
     </td>
     </tr>

@@ -22,9 +22,9 @@ Route::group(['prefix'=>'v1/j', 'middleware' => 'auth', 'middleware' => 'client_
         Route::get('admin/store','Api\AdminApiController@adminStore')->name('admin.store');
 
         Route::get('organization/index/{slug_id}','Api\OrganisationApiController@getOrganisation')->name('organization.index');
-        Route::get('orgs/{findingSlugName}/dashboard','Api\OrganisationApiController@getSlugIdOrganisation')->name('slug_id.organization');
+        Route::get('orgs/{findingSlugName}/{authId}/dashboard','Api\OrganisationApiController@getSlugIdOrganisation')->name('slug_id.organization');
         Route::post('organization/store','Api\OrganisationApiController@storeOrganisation')->name('org-store');
-        Route::get('organization/edit/{id}','Api\OrganisationApiController@editOrganisation')->name('organization.edit');
+        Route::get('organization/edit/{id}/{user_auth_id}','Api\OrganisationApiController@editOrganisation')->name('organization.edit');
         Route::post('organization/update','Api\OrganisationApiController@updateOrganisation')->name('organization.update');
         Route::get('organization/destroy/{id}','Api\OrganisationApiController@destroyOrganisation')->name('organization.delete');
 
@@ -32,9 +32,14 @@ Route::group(['prefix'=>'v1/j', 'middleware' => 'auth', 'middleware' => 'client_
         Route::get('invitedSlugBasedDashbaord/ChekingUserEmail/{getOrgBasedWithRollIdDashboard}','Api\OrganisationApiController@getInvitedUserDasboard'); // email validation from orgainzation
         Route::post('organization/invited','Api\OrganisationApiController@invited_role_with_org_name')->name('invited.role.org.name');
         Route::post('organization/invitedByregister/{get_email_id}/{check_member_email}','Api\OrganisationApiController@invitedByRegsiterUserIDNameStore')->name('inviteByregsiterUser');
-      
+        // user invited and removed open
+        Route::get('organization/userRemoveOrgDestroy/{id}/{user_organisation_id}','Api\OrganisationApiController@organisationRemoveFromAdmin')->name('organization.remove_org_use');
+        Route::get('member_active_deactive_user/{id}','Api\OrganisationApiController@organisationActiveAndDeactive')->name('memberedit');
         // Invited role with organization name close
-
+        
+       
+        Route::get('invitedManagerUserGetting/{userAuthId}/{organisation_id}','Api\OrganisationApiController@managerGetOnProjectPage');
+        //  only manager and user calling in drop down on project close
         //TasktypeApi route for all function
         Route::get('task/index/{id}','Api\TaskApiController@getTask')->name('task.index');
         Route::post('task/store','Api\TaskApiController@storeTask')->name('task.store');
@@ -151,7 +156,7 @@ Route::group(['prefix'=>'v1/j', 'middleware' => 'auth', 'middleware' => 'client_
         Route::get('wizard/destroy_wizard/{id}','Api\WizardProjectApiController@delete_wizard_project')->name('wizard.project.del');
         Route::get('wizard/getProjectDataId/{project_name_id}','Api\WizardProjectApiController@getProjectById')->name('get_project_Data');
 
-        Route::get('siteadmin_tasktype/index/{slug_id}','Api\TaskTypeGetSiteAdminController@getValueAllSiteAdmin')->name('tasktype.siteadmin.index');
+        // Route::get('siteadmin_tasktype/gettasktype/{slug_id}','Api\TaskTypeGetSiteAdminController@getValueAllSiteAdmin')->name('tasktype.siteadmin.index');
 
         
 });

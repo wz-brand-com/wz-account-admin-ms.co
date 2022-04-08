@@ -138,7 +138,6 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                             <input type="hidden" value="{{$org_slug}}" id="slug" name="u_org_slugname">
                                             <input type="hidden" value="{{$slug_id}}" name="u_org_organization_id" id="u_org_organization_id">
                                             <input type="hidden" value="{{$getting_roll_id}}" name="u_org_role_id" id="u_org_role_id">
-
                                     </div>
 
                                     <!-- <br /> -->

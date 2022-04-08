@@ -89,8 +89,7 @@ $(document).ready(function() {
         if ($('#facebook_url_id').val() != '') {
             var fb_validate_url = $('#facebook_url_id').val();
             $('#class_err').hide();
-            // var pattern_fb = /^http(s)?:\/\/(www\.)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
-            var pattern_fb = /^(http|https)\:\/\/www.facebook.com\/.*/i;
+            var pattern_fb = /^http(s)?:\/\/(www\.)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
             if (pattern_fb.test(fb_validate_url)) {
                 $('#fb_url_error').hide();
                 $('.next-step1').removeAttr('disabled', 'disabled');

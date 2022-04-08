@@ -1,5 +1,5 @@
 @extends('layouts.backend.mainlayout')
-@section('title','User Pagerank')
+@section('title','Account Admin')
 
 @section('content')
 <input type="hidden" id="a_u_a_b_t" value="{!! $a_user_api_bearer_token !!}">
@@ -10,28 +10,9 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
 <!-- hidden Auth email and id for calling in json index -->
 <input type="hidden" value="{{ Auth::user()->id }}" name="admin_id" id="auth_id" />
 <input type="hidden" value="{{ Auth::user()->email }}" name="admin_email" id="auth_email" />
-<!-- ============================================================== -->
-<!-- Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
-{{-- <div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <h3 class="text-themecolor">Page Ranking Section</h3>
-    </div>
-    <div class="col-md-7 align-self-center">
-        <!-- <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">System Setting</a></li>
-            <li class="breadcrumb-item active">Task</li>
-        </ol> -->
-    </div>
-</div> --}}
-<br><br><br>
-<!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
 
-<!-- ============================================================== -->
-<!-- Container fluid  -->
-<!-- ============================================================== -->
+<br><br><br>
+
 <div class="container-fluid">
     <!-- ============================================================== -->
     <!-- Start Page Content -->
@@ -145,8 +126,9 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                             <input type="hidden" value="" id="project_id" name="project_id">
                                             <input type="hidden" value="{{$org_slug}}" id="slug" name="u_org_slugname">
                                             <input type="hidden" value="{{$slug_id}}" name="u_org_organization_id" id="u_org_organization_id">
-                                            <input type="hidden" value="{{$getting_roll_id}}" name="u_org_role_id" id="u_org_role_id"> 
-                                    </div>
+                                            <input type="hidden" value="{{$getting_roll_id}}" name="u_org_role_id" id="u_org_role_id">
+
+                                        </div>
 
                                     <!-- <br /> -->
                                     <div class="form-group text-center">
@@ -211,19 +193,80 @@ $(document).ready(function() {
         var project_id = $("#project_name option:selected").attr("name");
         console.log(project_id);
         $.ajax({
-                type: "GET",
-                url: '{{url('api/v1/j/addurl/getProject')}}/'+project_id,
-                data: {},
-                headers: {
+                "type": "GET",
+                // url: '{{url('api/v1/j/addurl/getProject')}}/'+project_id,  
+                "url": "{{url('api/v1/j/addurl/getProject')}}/"+project_id,
+                "data": {},
+                "headers": {
                     "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
                 },
                 success: function(response) {
-                console.log(response);
-                $('#url').empty();
-                $('#url').append('<option> Select Url </option>');
-                $.each(response,function(i,link){
-                        $('#url').append('<option name="'+link.id+'" value="'+link.url+'">'+link.url+ '</option>');
-                    });
+                // console.log(response);
+                // $('#url').empty();
+                // $('#url').append('<option> Select Urls </option>');
+                // $.each(response,function(i,link){
+                //         $('#url').append('<option name="'+link.id+'" value="'+link.url+'">'+link.url+ '</option>');
+                //     });
+                // ############################################################
+
+                    var wiz_url = response.getting_wizproject_url;
+                        console.log('wizard ka url le kr aa gaya' + wiz_url);
+                     $('#url').empty();
+                        $('#url').append('<option> Select Urls </option>');  
+                        console.log(response);
+                        $.each(response.data, function (i, link) {
+                            $('#url').append('<option name="' + link.id +'" value="' + link.url + '">' + link.url +'</option>'); 
+                        });
+
+                        // wizard url open
+                        $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
+                        '</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.linkedIn+'">'+wiz_url.data.linkedIn+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.youtube+'">'+wiz_url.data.youtube+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.twitter+'">'+wiz_url.data.twitter+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.reddit+'">'+wiz_url.data.reddit+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.tumblr+'">'+wiz_url.data.tumblr+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.plurk+'">'+wiz_url.data.plurk+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.getpocket+'">'+wiz_url.data.getpocket+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.wix+'">'+wiz_url.data.wix+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.wordpress+'">'+wiz_url.data.wordpress+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.weebly+'">'+wiz_url.data.weebly+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.medium+'">'+wiz_url.data.medium+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.professnow+'">'+wiz_url.data.professnow+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.github+'">'+wiz_url.data.github+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.hubpages+'">'+wiz_url.data.hubpages+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.ehow+'">'+wiz_url.data.ehow+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.dzone+'">'+wiz_url.data.dzone+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.articlesfactory+'">'+wiz_url.data.articlesfactory+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.justdial+'">'+wiz_url.data.justdial+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.sulekha+'">'+wiz_url.data.sulekha+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.indiamart+'">'+wiz_url.data.indiamart+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.quikr+'">'+wiz_url.data.quikr+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.click+'">'+wiz_url.data.click+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.quora+'">'+wiz_url.data.quora+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.wikibooks+'">'+wiz_url.data.wikibooks+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.answers+'">'+wiz_url.data.answers+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.superuser+'">'+wiz_url.data.superuser+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.dailymotion+'">'+wiz_url.data.dailymotion+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.vimeo+'">'+wiz_url.data.vimeo+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.metacafe+'">'+wiz_url.data.metacafe+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.dropshots+'">'+wiz_url.data.dropshots+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.mediafire+'">'+wiz_url.data.mediafire+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.slideshare+'">'+wiz_url.data.slideshare+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.scribd+'">'+wiz_url.data.scribd+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.four_shared+'">'+wiz_url.data.four_shared+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.issuu+'">'+wiz_url.data.issuu+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.freeadstime+'">'+wiz_url.data.freeadstime+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.superadpost+'">'+wiz_url.data.superadpost+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.mastermoz+'">'+wiz_url.data.mastermoz+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.h1ad+'">'+wiz_url.data.h1ad+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.imgur+'">'+wiz_url.data.imgur+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.flickr+'">'+wiz_url.data.flickr+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.instagram+'">'+wiz_url.data.instagram+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.pinterest+'">'+wiz_url.data.pinterest+'</option>'
+                        );
+                        // wizard url close
+                // ############################################################
                 },
                 error: function(errorResponse) {
                 console.log(errorResponse);
@@ -275,7 +318,7 @@ $(document).ready(function() {
             {"title": "Page Authority","targets": 4,"width": "20%"},
             {"title": "Google S Page Placement","targets": 5,"width": "15%"},
             {"title": "B S Page Placement","targets": 6,"width": "15%"},
-          
+            // {"title": "Action","targets": 7,"width": "10%"},
              ],
         columns: [{
                 data: 'id'

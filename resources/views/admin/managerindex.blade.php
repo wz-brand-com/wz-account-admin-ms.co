@@ -84,7 +84,7 @@
                                         <input type="hidden" value="{{ Auth::user()->email }}" name="invited_by_email"/>
                                         <!-- for account admin below value fo id and email will store it it will get value by auth -->
                                         <input type="hidden" value="{{$org_slug}}" id="slug" name="u_org_slugname">
-                                        <input type="hidden" value="{{$slug_id}}" name="u_org_organization_id">
+                                        <input type="hidden" value="{{$slug_id}}" id="user_organisation_id" name="u_org_organization_id">
                                         <input type="hidden" value="" name="u_org_user_member_role_name" id="u_org_user_member_role_name">
                                         <input type="hidden" value="0" name="status">
                                     </div>
@@ -149,6 +149,7 @@
                                                 <h4 class="dashboard">Are you sure want to remove This member?</h4>                                           
                                             </div>
                                             <div class="modal-footer">
+                                                
                                                 <button type="button" name="ok_button_member_remove" id="ok_invited_button_removed"
                                                     class="btn btn-danger">OK</button>
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -205,7 +206,7 @@
 
         console.log('trying to call api');
         id = $('#admin_id').val();
-        // org_slug = $('#slug').val();
+        
         getOrgBasedWithRollIdDashboard = $('#slug').val();
         console.log(slug);
         var dt = $('#managerTable').DataTable({
@@ -360,8 +361,8 @@
                 {
                 // else part for vaidation  close
                 $.ajax({
-                    url: "{{url('members/store') }}",
-                    // url: "{{Route('invited.role.org.name') }}",
+                    url: "{{url('members/store') }}",  // from web.php
+                    // url: "{{Route('invited.role.org.name') }}", // from api.php
                     method: "POST",
                     data: new FormData(this),
                     contentType: false,
@@ -442,14 +443,13 @@
         });
         //
         $(document).on('click', '.add_block_user', function () {
-            console.log('working edit button');
             $('#name_form').show();
             var id = $(this).attr('id');
             $('#form_result').html('');
             $.ajax({
                 type: "get",
                 data: {},
-                url: "{{url('member_active_deactive_user')}}/" + id,
+                url: "{{url('api/v1/j/member_active_deactive_user')}}/" + id,
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
                 },
@@ -468,7 +468,8 @@
         $(document).on('click', '.invited_removed_button', function () {
             $('#remove_memeber_model').modal('show');
             var id = $(this).attr('id');
-       
+            var user_organisation_id = $('#user_organisation_id').val();
+            console.log('user_organisation_id id ka value aa gaya '+user_organisation_id);
         $(document).on('click', '#ok_invited_button_removed', function () {
             console.log('working invited removed button'+id);
            
@@ -476,7 +477,7 @@
             $.ajax({
                 type: "get",
                 data: {},
-                url: "{{url('member_invited_removed_user')}}/" + id,
+                url: "{{url('api/v1/j/organization/userRemoveOrgDestroy')}}/" + id + '/' + user_organisation_id,
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
                 },

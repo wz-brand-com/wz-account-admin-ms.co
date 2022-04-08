@@ -59,6 +59,8 @@
         font-family: 'Playfair Display', serif;
     }
 
+    
+
 </style>
 
 @extends('layouts.orgs-page-layout.mainlayout')
@@ -104,55 +106,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                     @endif
                     <!-- messsage close -->
                     <!-- message body open -->
-                    <!-- message body open -->
-                    @if($message = session()->get('message'))
-                    <!-- model open -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header text-white" style="background-color: #6666ff">
-                                    <h5 class="modal-title" id="exampleModalLabel">Can't Delete</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p style="font-size: 17px"> This organization cannot be deleted because it has been already assigned to someone.</p>
-                                </div>
-                                <div class="modal-footer">
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- model close -->
-                        <script>
-                            $(document).ready(function () {
-                                $("#exampleModalCenter").modal('show');
-                            });
-
-                            $(document).ready(function () {
-                                // Open modal on page load
-                                $("#exampleModalCenter").modal('show');
-
-                                // Close modal on button click
-                                $(".close").click(function () {
-                                    $("#exampleModalCenter").modal('hide');
-                                });
-                            });
-
-                        </script>
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-                    @endif
-                    @if(session()->get('danger'))
-                    <div class="alert alert-danger col-xl-10 col-12 col-sm-10 col-lg-10 col-md-10">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        {{ session()->get('danger') }}
-                    </div>
-                    @endif
-                    <!-- message body close -->
+                  
                     <!-- ################# close testing delted organization ####################33 -->
                     <!-- if organization not be delete then modal will be open -->
                     <div class="card-header text-success">
@@ -163,14 +117,16 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                         <div id="formOrganisationModal" class="modal fade" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                    <div class="modal-header bg-primary">
+                                <div class="modal-header bg-primary">
                                         <h5 class="modal-title text-white" id="exampleModalLabel">Add Organization</h5>
-                                        <!-- <button type="button btn btn-info" class="add_orgclose" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button> -->
-                                        <button type="button" class="add_orgclose" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                                        <button type="button" class="closeing btn btn-light">Close</button>
+                                        <script>
+                                            $(document).ready(function () {
+                                                $(".closeing").click(function () {
+                                                    $("#formOrganisationModal").modal('hide');
+                                                });
+                                            });
+                                        </script>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Success Message after submit -->
@@ -218,23 +174,25 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                         </form>
                     </div>
                     <!-- {{-- end organization  --}} -->
-                    <div class="card-body">
-                        <div class="form-group" id="name_form">
-                            <div class="col-md-12">
-                                <!-- testing card open -->
-                                <div class="card mt-2">
-                                    <div class="card-body shadow ">
-
-                                        <!-- Table for showing data start -->
-                                            <table id="organisation_data_Table" class="table" data-order='[[ 0, "desc" ]]'>
-                                                <thead>
-                                                    
-                                                </thead>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
-                                        <!-- Table for showing data end -->
+                    <div class="col-lg-12">
+                        <div class="card-body">
+                            <div class="form-group" id="name_form">
+                                <div class="col-md-12">
+                                    <!-- testing card open -->
+                                    <div class="card mt-2">
+                                        <div class="card-body shadow ">
+    
+                                            <!-- Table for showing data start -->
+                                                <table id="organisation_data_Table" class="table" data-order='[[ 0, "desc" ]]'>
+                                                    <thead>
+                                                        
+                                                    </thead>
+                                                    <tbody>
+    
+                                                    </tbody>
+                                                </table>
+                                            <!-- Table for showing data end -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -288,8 +246,61 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                         </div>
                     </div>
                     {{-- model close --}}
-
                     <!-- card close -->
+
+
+                    <!-- {{-- delete nhi hona chahiye modal start here  --}} -->
+                    <div class="modal fade" id="reextendmodel" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header bg-light">
+                                    <h5 class="deny_organization" id="exampleModalLabel">Deny</h5>
+                                    <button type="button" class="closeings btn btn-light">Close</button>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $(".closeings").click(function () {
+                                                $("#reextendmodel").modal('hide');
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 style="color: red;">This organisation can't be delete .</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- {{-- delete nhi hona chahiye modal start here  --}}  -->
+
+                    <!-- update nhi hona chahiye  -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="reextendmodels" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Deny</h5>
+                            <button type="button" class="closeings btn btn-light">X</button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 style="color: red;">This organization can't be edit because it's already assign to someone</h5>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="closeings btn btn-primary">Close</button>
+                        </div>
+                        <script>
+                                        $(document).ready(function () {
+                                            $(".closeings").click(function () {
+                                                $("#reextendmodels").modal('hide');
+                                            });
+                                        });
+                                    </script>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- update nhi hona chahiye  -->
+
+
                 </div>
             </div>
         </div>
@@ -342,18 +353,18 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                 {
                     "title": "Organisation Name",
                     "targets": 1,
-                    "width": "45%"
+                    "width": "30%"
                 },
                 {
                     "title": "Dashboard Access",
                     "targets": 2,
-                    "width": "45%"
+                    "width": "30%"
                 },
               
                 {
                     "title": "Action",
-                    "targets": 3,
-                    "width": "20%"
+                    "targets": 1,
+                    "width": "25%"
                 },
             ],
             columns: [{
@@ -403,6 +414,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
             $('#sample_organization_form')[0].reset();
             $('#form_result').html('');
             $('.modal-title').text("Add New Organization");
+            $('.deny_organization').text("Deny");
             $('#action_button').val("Add");
             $('#action').val("Add");
             $('#formOrganisationModal').modal('show');
@@ -470,7 +482,6 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                             $('#formOrganisationModal').modal('hide');
                             location.reload(true);
                         }, 2000);
-
                         var html = '';
                         if (data.success) {
                             html = '<div class="alert alert-success">' + data.success +
@@ -489,25 +500,49 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
         //
         $(document).on('click', '.edit', function () {
             console.log('working edit button');
+            var user_auth_id = $('#org_user_id').val();
+            console.log('auth ka id' + user_auth_id);
             $('#name_form').show();
             var id = $(this).attr('id');
             $('#form_result').html('');
             $.ajax({
                 type: "get",
                 data: {},
-                url: "{{url('api/v1/j/organization/edit/')}}/" + id,
+                url: "{{url('api/v1/j/organization/edit')}}/" + id +'/'+ user_auth_id,
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
                 },
-                success: function (html) {	
-                    console.log('value aa gaya edit ke page pe'+html);
-                    console.log(html);
+                // success: function (html) {	
+                //     console.log('value aa gaya edit ke page pe'+html);
+                //     console.log(html);
                     
-                    // $('#org_slug').val(html.data.org_slug);
+                //     // $('#org_slug').val(html.data.org_slug);
+                //     $('#sa_id').val(html.data.admin_id);
+                //     $('#sa_email').val(html.data.admin_email);
+                //     $('.modal-title').text("Edit organisation");
+                    
+                //     $('.modal-title_delete').text("Task will be delete");
+                //     $('#action_button').val("Update");
+                //     $('#action').val("Update");
+                //     $('#formOrganisationModal').modal('show');
+                //     $('#hidden_id').val(id);
+                //     var orgslug_title = html.data.org_slug;
+                //    $('#org_name').val(orgslug_title);
+                   
+
+                // }
+
+
+
+                // testing open
+             
+                success: function (html) {
+                   
+                   if (html.success) {
+                      // $('#org_slug').val(html.data.org_slug);
                     $('#sa_id').val(html.data.admin_id);
                     $('#sa_email').val(html.data.admin_email);
-                    $('.modal-title').text("Edit Task Type");
-                    
+                    $('.modal-title').text("Edit organisation");
                     $('.modal-title_delete').text("Task will be delete");
                     $('#action_button').val("Update");
                     $('#action').val("Update");
@@ -515,66 +550,28 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                     $('#hidden_id').val(id);
                     var orgslug_title = html.data.org_slug;
                    $('#org_name').val(orgslug_title);
-                   
+                      
 
-                }
+                   } else {
+                       $('#confirmModal').modal('hide');
+                       $('#ok_button').text('OK');
+                       $('#reextendmodels').modal('show'); // yaha pe ek naya model bana do 
+                       console.log('user name aa raha hai');
+                       $('#form_result').html("");
+                   }
+               },
+               error: function (html) {
+                   console.log('Error:', html);
+               }
+                // testing close
+
+
             })
         });
 
 
        
-        // $(document).on('click', '.delete', function () {
-        //     id = $(this).attr('id');
-
-        //     $('#confirmModal').modal('show');
-        // });
-
-        // var id;
-        // $(document).on('click', '.delete', function () {
-        //     console.log("delete pe delete ho rha hai");
-        //     id = $(this).attr('id');
-        //     url_name = $(this).attr('name');
-        //     $('#confirmModal').modal('show');
-        // });
-
-        // $('#ok_button').click(function () {
-        //     console.log('working delete button');
-        //     $('#name_form').show();
-        //     $('#form_result').html('');
-        //     $.ajax({
-        //         type: "get",
-        //         data: {},
-        //         url: "{{url('api/v1/j/organization/destroy')}}/" + id,
-        //         headers: {
-        //             "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
-        //         },
-        //         beforeSend: function () {
-        //             $('#ok_button').text('Deleting..');
-        //         },
-        //         success: function (data) {
-        //             if (data.success) {
-        //                 html = '<div class="alert alert-success">' + data.message +
-        //                 '</div>';
-        //                 $('#form_result').html(html);
-        //                 setTimeout(function () {
-        //                     $('#confirmModal').modal('hide');
-        //                     $('#ok_button').text('OK');
-        //                     $('#organisation_data_Table').DataTable().ajax.reload();
-        //                     // alert('Data Deleted Successfully'+data.success);
-        //                 }, 2000);
-        //             } else {
-        //                 $('#confirmModal').modal('hide');
-        //                 $('#ok_button').text('OK');
-        //                 $('#reextendmodel').modal('show');
-
-        //             }
-        //             // testing close
-        //         },
-        //         error: function (data) {
-        //             console.log('Error:', data);
-        //         }
-        //     })
-        // });
+      
         var id;
         $(document).on('click', '.delete', function () {
             id = $(this).attr('id');
@@ -597,9 +594,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                     $('#ok_button').text('Deleting..');
                 },
                 success: function (data) {
-                    // $('#ok_button').text('OK');
-                    // $('#confirmModal').modal('hide');
-                    // $('#projectTable').DataTable().ajax.reload();
+                   
                     if (data.success) {
                         html = '<div class="alert alert-success">' + data.message +
                         '</div>';

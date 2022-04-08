@@ -18,7 +18,6 @@ class CreateUsersorganizationsTable extends Migration
             $table->string('invited_by')->nullable();
             $table->string('invited_by_email')->nullable();
             $table->string('u_org_user_id')->nullable();
-            $table->string('u_org_user_name')->nullable();
             $table->string('u_org_user_email')->nullable();
             $table->string('u_org_role_id')->nullable();
             $table->string('u_org_role_name')->nullable();

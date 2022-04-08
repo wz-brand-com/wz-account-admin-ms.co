@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/twitter-style.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
-
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> --}}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <title>WizBrand Online Digital Marketing Software</title>
 </head>
 <style>

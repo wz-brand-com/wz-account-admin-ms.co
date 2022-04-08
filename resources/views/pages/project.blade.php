@@ -112,6 +112,7 @@
                     <ul id="tab-button">
                         <li><a href="#tab01"> Project Tab</a></li>
                         <li><a href="#tab02">URL Tab</a></li>
+                        <li><a href="#tab03">Keyword</a></li>
 
                     </ul>
                 </div>
@@ -119,6 +120,7 @@
                     <select id="tab-select">
                         <option value="#tab01">Project Tab</option>
                         <option value="#tab02">Tab 2</option>
+                        <option value="#tab03">Tab 2</option>
 
                     </select>
                 </div>
@@ -161,7 +163,7 @@
                                             <label class="control-label">Project Name </label>
                                             <input type="text" name="project_name" id="project_name" autocomplete="off"
                                                 class="form-control" />
-                                            <span id="username" class="text-danger"></span>
+                                            <span id="username" class="text-danger"></span>   
                                         </div>
 
                                         <div class="form-group" id="name_form">
@@ -169,11 +171,6 @@
                                             <select name="project_manager" id="project_manager" class="w-100 p-2">
                                         <option value="" class="form-controll text-dark">Select Manager </option>
                                                 <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option>
-                                                @foreach($project_getting_user_manager as $tsk_manger)
-                                                @if(Auth::user()->email !== $tsk_manger['u_org_user_email'])
-                                                    <option  value="{{$tsk_manger['u_org_user_email']}}" name="{{$tsk_manger['u_org_user_id']}}" >{{$tsk_manger['u_org_user_email']}}</option>
-                                                @endif
-                                                @endforeach
                                             </select>
                                         </div>
                                         <!-- Sending admin_id and admin_email in hidden input box -->
@@ -387,6 +384,168 @@
                     </div>
                     {{-- model close --}}
                 </div>
+                {{-- tab 3 start here  --}}
+                <div id="tab03" class="tab-contents">
+                    <div class="card-body">
+                        <div class="">
+    
+                            {{-- model  open --}}
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <button type="button" name="create_record" id="create_record"
+                                        class="btn btn-primary ">Add New Keyword</button>
+                                </div>
+                            </div>
+    
+                            <table id="keywordTable" class="table">
+                                <thead>
+    
+                                </thead>
+                                <tbody>
+    
+                                </tbody>
+    
+                            </table>
+    
+                            <div id="formModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-primary">
+                                            <h5 class="modal-title text-white" id="exampleModalLabel">Add New Keyword</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Success Message after submit -->
+                                            <span id="form_result" aria-hidden="true"></span>
+                                            <!-- Error Message after form not submit -->
+                                           
+                                            <form method="post" id="sample_form" class="form-horizontal"
+                                                enctype="multipart/form-data">
+                                                @csrf
+    
+                                                <div class="form-group" id="name_form">
+                                                    <label class="control-label col-md-4">Project Name</label>
+                                                    <div class="col-md-12">
+                                                    <select name="project_name" id="project_name" class="w-100 p-2">
+                                                            <option value="default" class="form-control text-dark">Select Project </option>
+                                                            @foreach(App\Http\Controllers\Api\ProjectApiController::getvalueall($slug_id) as $project)
+    
+                                                            <option name="{{$project['id']}}" value="{{$project['project_name']}}">{{$project['project_name']}}</option>
+                                                            @endforeach
+                                                        </select>
+    
+                                                    </div>
+                                                </div>
+        
+                                                <div class="form-group" id="name_form">
+                                                    <label class="control-label col-md-4">URL</label>
+                                                    <div class="col-md-12">
+                                                        <select name="url" id="url" class="w-100 p-2">
+                                                            <option value="" class="form-controll text-dark">Select URL </option>
+                                                            <option value="" class="form-controll text-dark"> </option>
+                                                        </select>
+    
+                                                    </div>
+                                                </div>
+    
+                                                <div class="form-group" id="name_form">
+                                                    <label class="control-label col-md-4">Keyword</label>
+                                                    <div class="col-md-12">
+                                                        <!-- <input type="text" name="keyword" id="keyword" class="form-control" /> -->
+                                                        <!-- testing keyword open -->
+                                                        <input id="keyword1"  name="keyword" class="form-control">
+                                                        <!-- testing keyword close -->
+                                                    </div>
+                                                    <!-- information open -->
+                                                    <span class="fa fa-info-circle text-success"> 
+                                                    <span class="text-danger mt-2">After Each Keyword Press Enter  </span>
+                                                    </span>
+                                                    <!-- information close -->
+                                                </div>
+                                                <!-- Sending admin_id and admin_email in hidden input box -->
+                                                <input type="hidden" value="{{ Auth::user()->id }}" name="admin_id"
+                                                    id="admin_id" />
+                                                <input type="hidden" value="{{ Auth::user()->email }}" id="admin_email" name="admin_email" />
+                                                <input type="hidden" value="NULL" name="user_id" id="user_id">
+                                                <input type="hidden" value="NULL" name="user_email" id="user_email">
+                                                <input type="hidden" value="" id="url_id" name="url_id" />
+                                                <input type="hidden" value="" id="project_id" name="project_id">
+                                                <input type="hidden" value="{{$org_slug}}" id="slug" name="u_org_slugname">
+                                                <input type="hidden" value="{{$slug_id}}" name="u_org_organization_id" id="u_org_organization_id">
+                                                <input type="hidden" value="{{$getting_roll_id}}" name="u_org_role_id" id="u_org_role_id">
+    
+                                        </div>
+    
+                                        <!-- <br /> -->
+                                        <div class="form-group text-center">
+                                            <input type="hidden" name="action" id="action" />
+                                            <input type="hidden" name="hidden_id" id="hidden_id" />
+                                            <input type="submit" name="action_button" id="action_button"
+                                                class="btn btn-warning float-center" value="Add" />
+                                        </div>
+                                        </form>
+    
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        
+                        <!-- data cannot delete after  model open  -->
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div id="reextendmodel" class="modal" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="card">
+                                                <div class="card-header" style="color:red;font-weight:bold;">
+                                                     Error
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h3 class="card-title" style="color:red;">Message </h3>
+                                                    <p class="card-text">The action can not be completed because the <span class="text-primary" name="name_manager" id="name_manager"> </span>
+                                                    is working in this <span class="text-primary">Task Manager of Task Board</span> program getting error message,</p>
+                                                    <a href="#" class="close" data-dismiss="modal"><i class="fa fa-times-circle text-danger"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- data cannot delete after model close -->
+    
+                        <div id="confirmModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-light">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <br>
+                                        <span class="modal-title_delete">Confirmation</span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4 class="text-center" style="margin:0; color:red;">Are you sure you want to remove this Keyword?</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" name="ok_button" id="ok_button"
+                                            class="btn btn-danger">OK</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        {{-- model close --}}
+    
+                    </div>
+                </div>
+                {{-- tab 3 end here  --}}
             </div>
         </div>
     </div>
@@ -422,11 +581,45 @@
 
 
 <script>
+
+   
     $(document).ready(function () {
         // image load
         window.addEventListener("load", function () {
             $(".loader").delay(500).fadeOut("slow");
         });
+    
+       // manger will be call on load page open   
+        userAuthId = $('#admin_id').val();
+        console.log('what is coming in userAuthId : ' +userAuthId);
+        organisation_id = $('#u_org_organization_id').val();
+        console.log('organisation id ka ' + organisation_id);
+        $.ajax({
+        type: 'get',
+        url: "{{url('api/v1/j/invitedManagerUserGetting')}}/" + userAuthId+'/'+organisation_id,
+        dataType: "json",
+        async:false,
+        dataSrc: 'data',
+        "beforeSend": function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+                        'a_u_a_b_t'));
+                },
+        
+        success: function(data) {
+            console.log('success main mamager id value a rha hai ki nahi'+data);
+            var p_name = ('#project_manager');
+            // $(p_name).empty();
+
+            $.each(data, function (i, link) {
+                            $('#project_manager').append('<option name="' + link.u_org_user_email +'" value="' + link.u_org_user_email + '">' + link.u_org_user_email +'</option>'); 
+                        });
+
+        }
+
+    });
+
+    // manger will be call on load page close
+
         console.log('trying to call api');
         // id = $('#u_org_role_id').val();
         slug_id = $('#u_org_organization_id').val();
@@ -517,6 +710,9 @@
 
 
         });
+
+        
+
         // data table close
 
         // model will be display on add and edit button click

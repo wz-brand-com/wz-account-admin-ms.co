@@ -115,7 +115,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
 									<div class="table-responsive m-t-10">
 	                                    <table id="MonthlyTable" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 	                                        <thead>
-                                                
+
 	                                        </thead>
 
 	                                        <tbody>
@@ -154,7 +154,7 @@ localStorage.setItem('a_u_a_b_t', $('#a_u_a_b_t').val());
                                                     <div class="form-group">  
                                                         <label class="control-label">Name [Use CTRL + Click to Multi Select] </label>
 
-                                                        <select class="select2 m-b-10 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Choose" name="user_name[]" id="user_name">
+                                                        <select class="select2 m-b-10 select2-multiple" style="width: 100%" multiple="multiple" data-placeholder="Choose" name="user_name[]" id="project_manager">
                                                         <option value="">Select Multiple User</option>
                                                         <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option> 
                                                         
@@ -256,6 +256,39 @@ $(document).ready(function() {
  window.addEventListener("load", function() {
    $(".loader").delay(500).fadeOut("slow");
 });
+
+  // manger will be call on load page open   
+  userAuthId = $('#admin_id').val();
+        console.log('what is coming in userAuthId : ' +userAuthId);
+        organisation_id = $('#u_org_organization_id').val();
+        console.log('organisation id ka ' + organisation_id);
+        $.ajax({
+        type: 'get',
+        url: "{{url('api/v1/j/invitedManagerUserGetting')}}/" + userAuthId+'/'+organisation_id,
+        dataType: "json",
+        async:false,
+        dataSrc: 'data',
+        "beforeSend": function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+                        'a_u_a_b_t'));
+                },
+        
+        success: function(data) {
+            console.log('success main mamager id value a rha hai ki nahi'+data);
+            var p_name = ('#project_manager');
+            // $(p_name).empty();
+
+            $.each(data, function (i, link) {
+                            $('#project_manager').append('<option name="' + link.u_org_user_email +'" value="' + link.u_org_user_email + '">' + link.u_org_user_email +'</option>'); 
+                        });
+
+        }
+
+    });
+
+    // manger will be call on load page close
+
+
     console.log('trying to call api');
 // hourly value start
 admin_id = $('#AAuth_id').val();
@@ -710,7 +743,8 @@ console.log('admin id '+admin_id);
                 console.log('value aa gaya edit ke page pe');
                 console.log(html);         
                 $.each(html, function(i, user) {
-                    $('#user_name').prepend("<option value='" + user.user_name + "' selected='selected'>" + user.user_name + "</option>");
+                    // $('#user_name').prepend("<option value='" + user.user_name + "' selected='selected'>" + user.user_name + "</option>");
+                    $('#project_manager').prepend("<option value='" + user.user_name + "' selected='selected'>" + user.user_name + "</option>");
                 });
               
                 $('#task_freq').val(html.data.task_freq);            

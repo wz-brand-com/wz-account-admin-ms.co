@@ -19,12 +19,14 @@ class ProjectController extends Controller
     }
     public function index($org_slug)
     {
+        $authId = Auth::user()->id;
         $a_user_api_bearer_token = $this->getProjectAccessToken();
         Log::info('we are in project controller slugwithdashboard function'.$org_slug);
         $findingSlugName = $org_slug;
         $apicontroller = new OrganisationApiController();
         Log::info(' we are in project controller OrganisationApiController:');
-        $userOrgId = $apicontroller->getSlugIdOrganisation($findingSlugName);
+        $userOrgId = $apicontroller->getSlugIdOrganisation($findingSlugName,$authId);
+        
         Log::info('we are in  project controller slugwithdashboard 03-02-2022 function :');
         $getting_roll_id = $userOrgId['slug_based_rollId'];
         $block_or_blocked = $userOrgId['slug_based_status'];
@@ -65,7 +67,7 @@ class ProjectController extends Controller
         Log::info('project_managers organization main email find ho gaya');
         // ========= project manager will be display who is assign for this slug name close
           if($getting_roll_id ==1){
-            Log::info(' if ke ander role id le kr aaa rha hai tas page project controller');
+            Log::info(' if ke ander role id le kr aaa rha hai tas page project controller');  
               return view('pages.project',compact('org_slug','getting_roll_id','a_user_api_bearer_token','slug_id','project_managers','project_getting_user_manager')); 
           }
           if($getting_roll_id ==2){

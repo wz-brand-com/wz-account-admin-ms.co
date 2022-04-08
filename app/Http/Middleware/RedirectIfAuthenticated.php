@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             // return redirect('account_admin/dashboard');
-            return redirect('/org');
+            return redirect('/organisation');
         }
 
         return $next($request);

@@ -1,5 +1,5 @@
 @extends('layouts.backend.mainlayout')
-@section('title','User Taskboard')
+@section('title','Account Admin')
 
 @section('content')
 <input type="hidden" id="a_u_a_b_t" value="{!! $a_user_api_bearer_token !!}">
@@ -12,7 +12,7 @@
 <input type="hidden" value="{{ Auth::user()->email }}" name="admin_email" id="auth_email" />
 <!-- select keyword html tag input open -->
 <link href="{{ asset('css/tagify.css') }}" rel="stylesheet">
-<script src="{{ asset('js/jQuery.tagify.min.js') }}"></script>  
+<script src="{{ asset('js/jQuery.tagify.min.js') }}"></script>    
 <script src="{{ asset('js/tagify.min.js') }}"></script>
 <style>
     .custom-tag {
@@ -30,43 +30,38 @@
     .tagify {
         --tags-border-color: none;
     }
-
+    #taskboardviewdetails span b{
+color:#000;
+    }
 </style>
-<!-- select keyword html tag input close -->
-<br><br><br><br>
-<!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
 
-<!-- ============================================================== -->
-<!-- Container fluid  -->
-<!-- ============================================================== -->
+<br><br><br>
+
 <div class="container-fluid">
-    <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
+
     <div class="row">
 
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
                     <div class="">
-
-                        <!-- {{-- model  open --}} -->
+                        <!-- -- model  open -- -->
+                        <div class="row">
+                            <div class="col-md-8">
+                            <button type="button" name="create_record" id="create_record"
+                                class="btn btn-primary ">Add New Task
+                            </button>
+                            </div>
+                        </div>
                         <table id="TaskboardTable" class="table">
                             <thead>
                                 <!-- data fetching from database -->
                             </thead>
                             <tbody>
-
                             </tbody>
-
                         </table>
-
-                        <div id="formModal" class="modal fade" role="dialog">
-
+                        <div id="taskboard_form_modal" class="modal fade" role="dialog">
                             <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
-
                                 <div class="modal-content">
                                     <div class="modal-header bg-primary">
                                         <h5 class="modal-title text-white" id="exampleModalLabel"></h5>
@@ -76,14 +71,11 @@
                                     </div>
                                     <div class="modal-body">
                                         <!-- Success Message after submit -->
-
                                         <span id="form_result" aria-hidden="true"></span>
                                         <!-- Error Message after form not submit -->
-
                                         <form method="post" id="sample_form" class="form-horizontal"
                                             enctype="multipart/form-data">
                                             @csrf
-
                                             <div class="row">
                                                 <div class="col-md-6" id="name_form">
                                                     <div class="form-group">
@@ -93,18 +85,13 @@
                                                                 Select Project </option>
                                                             @foreach(App\Http\Controllers\Api\ProjectApiController::getvalueall($slug_id)
                                                             as $project)
-
-                                                            <option name="{{$project['id']}}"
-                                                                value="{{$project['project_name']}}">
+                                                            <option name="{{$project['id']}}" value="{{$project['project_name']}}">
                                                                 {{$project['project_name']}}</option>
                                                             @endforeach
 
-                                                        </select>
-
-
+                                                        </select> 
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
+
                                                     <div class="form-group">
                                                         <label class="control-label">Web Url</label>
                                                         <select name="weburl" id="url" class="w-100 p-2">
@@ -113,9 +100,7 @@
                                                         </select>
                                                         <input type="hidden" value="" id="weburl_id" name="weburl_id" />
                                                     </div>
-                                                </div>
 
-                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">keyword</label>
                                                         <input name='keyword' onkeydown="return false;">
@@ -124,8 +109,6 @@
                                                                 Keyword </option>
                                                         </select>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Severity</label>
                                                         <select class="form-control custom-select" name="severity"
@@ -137,61 +120,41 @@
                                                             <option value="Important">Important</option>
                                                             <option value="Regular">Regular</option>
                                                         </select>
-
                                                     </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Description</label>
-                                                        <textarea row="4" name="description" id="textarea"
-                                                            class="w-100 p-2" maxlength="120"> </textarea>
-                                                        <span id="rchars">120</span> Character(s) Remaining
 
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Task Type</label>
-                                                        <select name="tasktype" id="tasktype" class="w-100 p-2">
-                                                            <option value="default" class="form-control text-dark">
-                                                                Select Task Type </option>
-                                                                @foreach(App\Http\Controllers\Api\TaskApiController::getvalueall($slug_id)
-                                                            as $task)
-                                                            <option value="{{$task['task_type']}}">
-                                                                {{$task['task_type']}}</option>
+                                                    
 
-                                                            @endforeach
+                                                        <select name="tasktype" id="taskTypeValue" class="w-100 p-2">
+                                                            <option value="default" class="form-controll text-dark">Select Task Type </option>
+                                                           
+                                                          
                                                         </select>
+
+                                                      
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
+
+
                                                     <div class="form-group">
                                                         <label class="control-label">Task Deadline</label>
-                                                        <input type="text" id="taskdeadline"
+                                                        <input type="date" id="taskdeadline"
                                                             class="form-control mydatepicker" placeholder="mm/dd/yyyy"
                                                             name="taskdeadline" autocomplete="off">
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
                                                     <div class="form-group">
 
                                                     <label class="control-label">Task Assign To</label>
-                                                    <select name="user" id="user" class="w-100 p-2">
-                                                    <option value="" class="form-controll text-dark">Select Email </option>
-                                                    <option value="{{Auth::user()->email}}">{{Auth::user()->email}}  </option>
-
-                                                            @foreach($task_board_get_user as $tsk_manger) 
-                                                                @if(Auth::user()->email !== $tsk_manger['u_org_user_email'])  
-                                                                    <option  value="{{$tsk_manger['u_org_user_email']}}" name="{{$tsk_manger['u_org_user_id']}}" >{{$tsk_manger['u_org_user_email']}}</option>
-                                                                @endif 
-                                                             @endforeach
+                                                        <select name="user" id="project_manager" class="w-100 p-2">
+                                                            <option value=""  class="form-controll text-dark"> Select Email </option>
+                                                            <option value="{{Auth::user()->email}}">{{Auth::user()->email}}</option>
+                                                            
                                                         </select>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6" id="hidestatus">
-                                                    <div class="form-group">
+                                                    <div class="form-group" id="hidestatus">
                                                         <label class="control-label">Task Status</label>
 
                                                         <select name="status" id="status" class="w-100 p-2">
@@ -200,24 +163,30 @@
                                                             <option value="hold">Hold</option>
                                                             <option value="verified">Verified</option>
                                                             <option value="completed">Completed</option>
-
                                                         </select>
-
                                                     </div>
-                                                </div>
 
-                                                <div class="form-group">
+                                                    <div class="form-group">
                                                         <label class="control-label">Attachment File</label>
                                                         <input type="file" id="document_file"
                                                             class="form-control" name="document" accept=".pdf, .jpeg, .jpg, .png" >
                                                              <span class="text-danger">Upload file (.pdf, .jpeg, .jpg, .png)</span>
                                                              <div id="document_show"></div>
+                                                             <!-- <input type="hidden" id="file_document_show" name="file_document_show"> -->
                                                     </div>
-                                            </div>
 
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Description</label>
+                                                        <textarea row="4" name="description" id="textarea"
+                                                            class="w-100 p-2" maxlength="120"> </textarea>
+                                                        <span id="rchars">120</span> Character(s) Remaining
+                                                    </div>
+                                                </div>
+                                            </div>
                                     <!-- Sending admin_id and admin_email in hidden input box -->
                                     <input type="hidden" name="user_hidden_id" id="user_hidden_id"> <!--- for img update hiden id--->
-
                                     <input type="hidden" value="{{ Auth::user()->id }}" name="admin_id" id="admin_id"/>
                                     <input type="hidden" value="{{ Auth::user()->email }}" id="admin_email" name="admin_email"/>
                                     <input type="hidden" value="NULL" name="user_id" id="user_id"/>
@@ -226,10 +195,10 @@
                                     <input type="hidden" value="{{$slug_id}}" name="u_org_organization_id" id="u_org_organization_id">
                                     <input type="hidden" value="{{$getting_roll_id}}" name="u_org_role_id" id="u_org_role_id">
                                     <!-- Sending admin_id and admin_email in hidden input box end-->
-                                   
+
                                     </div>
                                     <input type="hidden" value="" id="url_id" name="url_id" />
-                                  
+
                                     <input type="hidden" value="" id="project_id" name="project_id">
                                     <input type="hidden" value="" id="title" name="title">
 
@@ -247,8 +216,28 @@
 
                     </div>
 
-                  
-
+                    <!-- for delete form open -->
+                    <div id="confirmModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-light">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <br>
+                                    <span class="modal-title_delete text-dark">Confirmation</span>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 class="text-center" style="margin:0; color:red;">Are you sure you want to remove
+                                        this Task Borad</h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" name="ok_button" id="ok_button"
+                                        class="btn btn-danger">OK</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- model close --}}
                     <!--  Popup for show full data button start -->
                     <div class="modal fade" id="viewbutton" tabindex="-1" role="dialog"
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -264,8 +253,6 @@
                                     <table id="viewTable" class="table">
                                         <thead>
                                         </thead>
-
-
                                         <tbody>
                                         </tbody>
                                     </table>
@@ -285,8 +272,6 @@
 </div>
 
 <!-- task view details open -->
-
-
 <div id="taskboardviewdetails" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -298,8 +283,8 @@
                 <span id="famous_city_form_result" aria-hidden="true"></span>
                 <div id="cardop" class="cardop" style="display: none;">
                     <div class="card-body">
-                       <!-- Show Modal view Card start -->
-                       <div class="row">
+                            <!-- Show Modal view Card start -->
+                            <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                     <div>
                                         <span><b>Project name: </b></span>
@@ -339,21 +324,22 @@
                                 <hr>
                                 
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                        <span><b>Tasktype: </b></span>
-                                        <span id="tasktype_name"></span>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                        <span><b>Document: </b></span>
-                                        <span id="document_show_image"></span>
-                                    </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <span><b>Tasktype: </b></span>
+                                            <span id="tasktype_name"></span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <span><b>Document: </b></span>
+                                            <span id="document_show_image"></span>
+                                        </div>
                                 </div>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <span><b>Describtion: </b></span>
-                                        <span id="description_name"></span>
-                                    </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <span><b>Describtion: </b></span>
+                                            <span id="description_name"></span>
+                                        </div>
+                                    
                                 </div>
                                 <hr>
 
@@ -361,15 +347,14 @@
                             </div>
                             
                             <!-- Show Modal view Card End -->
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
 <!-- task view details close -->
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
@@ -382,6 +367,70 @@
     $(document).ready(function () {
         // image load
 
+           
+               // manger will be call on load page open
+               userAuthId = $('#admin_id').val();
+        console.log('what is coming in userAuthId : ' +userAuthId);
+        organisation_id = $('#u_org_organization_id').val();
+        console.log('organisation id ka ' + organisation_id);
+        $.ajax({
+        type: 'get',
+        url: "{{url('api/v1/j/invitedManagerUserGetting')}}/" + userAuthId+'/'+organisation_id,
+        dataType: "json",
+        async:false,
+        // dataSrc: 'data',
+        // "beforeSend": function (xhr) {
+        //             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+        //                 'a_u_a_b_t'));
+        //         },
+
+        headers: {
+                        "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
+                    },
+        
+        success: function(data) {
+            console.log('success main mamager id value a rha hai ki nahi'+data);
+            var p_name = ('#project_manager');
+            // $(p_name).empty();
+
+            $.each(data, function (i, link) {
+                            $('#project_manager').append('<option name="' + link.u_org_user_email +'" value="' + link.u_org_user_email + '">' + link.u_org_user_email +'</option>'); 
+                        });
+
+        }
+
+    });
+
+    
+
+    // manger will be call on load page close
+
+     // ======================== task type is calling in drop dwon open
+    //  slug_id = $('#admin_id').val();
+    //     console.log('task type auth is cooming' + slug_id);
+    //     $.ajax({
+    //         type: 'get',
+    //         url: "{{ url('api/v1/j/siteadmin_tasktype/gettasktype') }}/" + slug_id,
+    //         dataType: "json",
+    //         async: false,
+    //         dataSrc: 'data',
+    //         "beforeSend": function (xhr) {
+    //             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem(
+    //                 'a_u_a_b_t'));
+    //         },
+    //         success: function (data) {
+    //             console.log('success task type value is coming from site admin' + data);
+    //             var p_name = ('#taskTypeValue');
+    //             $.each(data, function (i, link) {
+    //             $('#taskTypeValue').append('<option name="' + link.tasktype + '" value="' + link.tasktype +'">' + link.tasktype + '</option>');
+    //             });
+    //         }
+    //     });
+    // ======================== task type is calling in drop dwon close
+
+
+
+
         // onchange function for url get via project name
         $('#project_name').on('change', function () {
             $('#keyword-select').empty();
@@ -393,14 +442,14 @@
             } else {
                 $('#url').empty();
                 $('#url').append('<option> Select URLs</option>');
-                
+
             }
 
 
             function ajaxCall() {
                 console.log('in ajaxCall');
                 var project_id = $("#project_name option:selected").attr("name");
-                console.log(project_id);
+                console.log('project name ka id aya yaha pe '+ project_id);
                 $.ajax({
                     "type": "GET",
                     "url": "{{url('api/v1/j/addurl/getProject')}}/" + project_id,
@@ -409,14 +458,74 @@
                         "Authorization": "Bearer " + localStorage.getItem('a_u_a_b_t')
                     },
                     success: function (response) {
+                        // $('#url').empty();
+                        // $('#url').append('<option> Select Urls </option>');
+                        // console.log(response);
+                        // $.each(response, function (i, link) {
+                        //     $('#url').append('<option name="' + link.id +'"value="'+link.url+'">'+link.url+'</option>');
+                        // });
+                        
+                       // this url is comming from add url ms concatinate close
+                        var wiz_url = response.getting_wizproject_url;
+                        console.log('wizard ka url le kr aa gaya' + wiz_url);  
                         $('#url').empty();
-                        $('#url').append('<option> Select Url </option>');
+                        $('#url').append('<option> Select Url </option>');  
                         console.log(response);
-                        $.each(response, function (i, link) {
-                            $('#url').append('<option name="' + link.id +
-                                '" value="' + link.url + '">' + link.url +
-                                '</option>');
+                        $.each(response.data, function (i, link) {
+                            $('#url').append('<option name="' + link.id +'" value="' + link.url + '">' + link.url +'</option>'); 
                         });
+                        // this url is comming from add url ms concatinate close
+
+                        // wizard url open
+                        // $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
+                        // '</option>'
+                        // );
+                        $('#url').append('<option name="' +wiz_url.data.id +'" value="' +wiz_url.data.facebook +'">' + wiz_url.data.facebook +
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.linkedIn+'">'+wiz_url.data.linkedIn+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.youtube+'">'+wiz_url.data.youtube+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.twitter+'">'+wiz_url.data.twitter+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.reddit+'">'+wiz_url.data.reddit+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.tumblr+'">'+wiz_url.data.tumblr+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.plurk+'">'+wiz_url.data.plurk+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.getpocket+'">'+wiz_url.data.getpocket+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.wix+'">'+wiz_url.data.wix+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.wordpress+'">'+wiz_url.data.wordpress+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.weebly+'">'+wiz_url.data.weebly+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.medium+'">'+wiz_url.data.medium+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.professnow+'">'+wiz_url.data.professnow+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.github+'">'+wiz_url.data.github+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.hubpages+'">'+wiz_url.data.hubpages+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.ehow+'">'+wiz_url.data.ehow+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.dzone+'">'+wiz_url.data.dzone+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.articlesfactory+'">'+wiz_url.data.articlesfactory+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.justdial+'">'+wiz_url.data.justdial+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.sulekha+'">'+wiz_url.data.sulekha+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.indiamart+'">'+wiz_url.data.indiamart+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.quikr+'">'+wiz_url.data.quikr+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.click+'">'+wiz_url.data.click+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.quora+'">'+wiz_url.data.quora+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.wikibooks+'">'+wiz_url.data.wikibooks+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.answers+'">'+wiz_url.data.answers+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.superuser+'">'+wiz_url.data.superuser+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.dailymotion+'">'+wiz_url.data.dailymotion+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.vimeo+'">'+wiz_url.data.vimeo+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.metacafe+'">'+wiz_url.data.metacafe+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.dropshots+'">'+wiz_url.data.dropshots+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.mediafire+'">'+wiz_url.data.mediafire+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.slideshare+'">'+wiz_url.data.slideshare+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.scribd+'">'+wiz_url.data.scribd+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.four_shared+'">'+wiz_url.data.four_shared+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.issuu+'">'+wiz_url.data.issuu+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.freeadstime+'">'+wiz_url.data.freeadstime+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.superadpost+'">'+wiz_url.data.superadpost+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.mastermoz+'">'+wiz_url.data.mastermoz+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.h1ad+'">'+wiz_url.data.h1ad+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.imgur+'">'+wiz_url.data.imgur+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.flickr+'">'+wiz_url.data.flickr+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.instagram+'">'+wiz_url.data.instagram+'</option>'
+                        +'<option name="' +wiz_url.data.id +'" value="'+wiz_url.data.pinterest+'">'+wiz_url.data.pinterest+'</option>'
+                        );
+                        // wizard url close  
                     },
                     error: function (errorResponse) {
                         console.log(errorResponse);
@@ -431,6 +540,7 @@
         $('#url').on('change', function () {
             console.log('keyword name change');
             var weburl_id = $("#url option:selected").attr("name");
+            console.log('geting url ka id on change url '+ weburl_id);
             $("#weburl_id").val(weburl_id);
             if (this.value != '') {
                 ajaxCall();
@@ -444,7 +554,7 @@
             function ajaxCall() {
                 console.log('in ajaxCall');
                 var url_id = $("#url option:selected").attr("name");
-                console.log(url_id);
+                console.log("url ka id kahe nahi aa rha be" + url_id);
                 $.ajax({
                     "type": "GET",
                     "url": "{{url('api/v1/j/keyword/getKeywordData')}}/" + url_id,
@@ -520,7 +630,7 @@
                     "targets": 1
                 },
                 {
-                    "title": "Project",
+                    "title": "Project&nbsp;&nbsp;Name",
                     "targets": 2
                 },
 
@@ -547,10 +657,27 @@
                     data: 'id'
                 },
                 {
-                    data: 'title'
+                    // data: 'title'
+                    data: null,
+                    render: function(data, type, row) 
+                    {
+                        return  data['title'].substr(0, 6) 
+                    },
                 },
                 {
-                    data: 'project_name'
+                    // data: 'project_name'
+
+                    data: null,
+                    render: function(data, type, row) 
+                    {
+                        // if(data.count < 30){
+                        //     return  data['project_name']
+                        // } else{
+                            return  data['project_name'].substr(0, 30)
+                            // +'...'
+                        // }
+                    },
+
                 },
 
                 {
@@ -587,7 +714,13 @@
 
                     render: function (data, type, row) {
                         return '<div class="row"><div class="col-4"><button type="button"  id="' +
-                            data['id'] +'" class="edit_task_view btn btn-success"><i class="mdi mdi-eye"></i></button></div></div>'
+                            data['id'] +
+                            '" class="edit btn btn-primary"><i class="mdi mdi-lead-pencil"></i></button></div>                            <div class="row"><div class="col-4"><button type="button"  id="' +
+                            data['id'] +
+                            '" class="details_task_view btn btn-success"><i class="mdi mdi-eye"></i></button></div>      <div class="col-4"><button type="button" id="' +
+
+                            data['id'] +
+                            '"  class="btn btn-danger  delete"><i class="mdi mdi-delete"></i></button></div> </div>'
                     },
                 },
             ],
@@ -676,7 +809,7 @@
 
         });
         // showing single data by id end
- 
+
         // model will be display on add and edit button click
         $(document).on('click', '#create_record', function () {
             tagify.removeAllTags();
@@ -687,26 +820,27 @@
             $('#action_button').val("Add");
             $('#action').val("Add");
             $('#hidestatus').hide();
-            $('#formModal').modal('show');
+            $('#document_show').hide();
+            $('#taskboard_form_modal').modal('show');
             $('#url').empty();
             $('#url').append('<option> Select Urls </option>');
             $('#keyword-select').empty();
             $('#keyword-select').append('<option> Select keyword </option>');
-            
+
         });
         // model will be close
 
         //  form working start
         $('#sample_form').on('submit', function (event) {
             event.preventDefault();
+
             //passing project id in hidden for submitting projec_id into databse
             var project_id = $("#project_name option:selected").attr("name");
             $('#project_id').val(project_id);
+         
             // data add working on submit button
-          
             if ($('#action').val() == 'Add') {
                 console.log('add button click ho rha ha');
-
                 $.ajax({
                     url: "{{url('api/v1/j/taskboards/store') }}/" + project_name,
                     method: "POST",
@@ -727,7 +861,7 @@
                                 '</div>';
                             $('#form_result').html(html);
                             setTimeout(function () {
-                                $('#formModal').modal('hide');
+                                $('#taskboard_form_modal').modal('hide');
                                 // $('#TaskboardTable').DataTable().ajax.reload();
                                 location.reload(true);
                             }, 2000);
@@ -768,7 +902,7 @@
                         console.log('Manager update ho gaya successfully');
                         //setting 2 second in modal to stay
                         setTimeout(function () {
-                            $('#formModal').modal('hide');
+                            $('#taskboard_form_modal').modal('hide');
                             // $('#TaskboardTable').DataTable().ajax.reload();
                             location.reload(true);
                         }, 2000);
@@ -806,8 +940,8 @@
             console.log('working edit button');
             $('#name_form').show();
             var id = $(this).attr('id');
-            $('#document_show').html('');
             $('#form_result').html('');
+            $('#document_show').html('');
             $.ajax({
                 type: "get",
                 data: {},
@@ -817,10 +951,10 @@
                 },
                 success: function (html) {
                     console.log('value aa gaya edit ke page pe');
-                    console.log(html);               
-                  
+                    console.log(html);
+
                     $.each(JSON.parse(html.data.keyword), function (key, value) {
-              
+
                         tagify.addTags([value.value])
                         });
                        // selector on keyword open
@@ -848,19 +982,23 @@
                     }
                 });
             // selector on keyword close
-
-                    //    image will be show on edit event open
-                    var documnet_files = html.data.document;
-                    // $('#document_show').append('<img width="250px;" height="150px;" src="https://www.wizbrand.com/wz-tasks-board-ms/storage/file/'+documnet_files+'">');
-                    $('#document_show').append('<a target="_blank" href="https://www.wizbrand.com/wz-tasks-board-ms/storage/file/'+documnet_files+'">'+documnet_files+'</a>');
-                    //    image will be show on edit event close
-
                     //open
                     $('#url').prepend("<option value='" + html.data.weburl +
                         "' selected='selected'>" + html.data.weburl + "</option>");
                     // close
+                //    image will be show on edit event open
+                var documnet_files = html.data.document;
+                $('#document_show').append('<a target="_blank" href="https://www.wizbrand.com/wz-tasks-board-ms/storage/file/'+documnet_files+'">'+documnet_files+'</a>');
+
+                // taking file name open
+                $('#file_document_show').val(documnet_files);
+                // taking file name close
+
+                //    image will be show on edit event close
                     $('#user_hidden_id').val(html.data.id);
+
                     $('#project_name').val(html.data.project_name);
+                    // $('#document_file').val(documnet_files);
                     $('#severity').val(html.data.severity);
                     $('#textarea').val(html.data.description);
                     $('#user').val(html.data.user);
@@ -874,14 +1012,14 @@
                     $('.modal-title_delete').text("Task Borad Delete");
                     $('#action_button').val("Update");
                     $('#action').val("Update");
-                    $('#formModal').modal('show');
+                    $('#taskboard_form_modal').modal('show');
                     $('#hidden_id').val(id);
                 }
-            }) 
+            })
         });
 
         //:::::::::::::::::::::::::::::::: task details open  :::::::::::::::::::::::::::;
-        $(document).on('click', '.edit_task_view', function () {
+        $(document).on('click', '.details_task_view', function () {
             console.log('task view details open');
             var id = $(this).attr('id');
             $('#document_show_image').html('');
@@ -900,10 +1038,7 @@
                         // console.log(key)
                         keyword_title += '<span class="custom-tag">' + value.value +
                             '</span>';
-
                     });
-
-
                     var severity_title = html.data.severity;
                     var description_title = html.data.description;
                     var user_title = html.data.user;
@@ -913,13 +1048,14 @@
                     var status_title = html.data.status;
                     var task_title = html.data.title;
                     var url_title = html.data.url;
-                      // image will be show on view modal open
-                      var documnet_files_image = html.data.document;
-                    // $('#document_show_image').append('<img width="250px;" height="150px;" src="https://www.wizbrand.com/wz-tasks-board-ms/storage/file/'+documnet_files_image+'">');
+                    // image will be show on view modal open
+                    var documnet_files_image = html.data.document;
+                    // $('#document_show_image').append('<img width="250px;" height="150px;" src="http://wz-tasks-board-ms/storage/file/'+documnet_files_image+'">');
+
+                    // var documnet_files_image = html.data.document;
                     $('#document_show_image').append('<a target="_blank" href="https://www.wizbrand.com/wz-tasks-board-ms/storage/file/'+documnet_files_image+'">'+documnet_files_image+'</a>');
                     // image will be show on view modal clsoe
 
-                    $('#taskboardviewdetails').modal('show');
                     $(".cardop").show();
                     $('#project_name_title').html(title);
                     $('#keyword_name').html(keyword_title);
@@ -932,6 +1068,8 @@
                     $('#status_name').html(status_title);
                     $('#title_name').html(task_title);
                     $('#url_name').html(url_title);
+                    $('#taskboardviewdetails').modal('show');
+
 
                 }
             })
@@ -994,9 +1132,6 @@
         $('.tagify__input').remove();
     }, 2000);
     });
-  
-   
-
     // keyword display on view details open
 
 </script>
